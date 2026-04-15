@@ -1,0 +1,2116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anindita Bose | Head of Credit Risk &amp; Data &amp; AI Executive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ─────────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a2332;
+      background: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─────────────────────────────────────────────
+       DESIGN TOKENS
+    ───────────────────────────────────────────── */
+    :root {
+      --teal-900: #003d3d;
+      --teal-800: #005c5c;
+      --teal-700: #007a7a;
+      --teal-600: #009090;
+      --teal-500: #00a8a8;
+      --teal-400: #20b2aa;
+      --teal-300: #4dc9c0;
+      --teal-200: #99ddd9;
+      --teal-100: #d0f0ee;
+      --teal-50:  #eaf8f7;
+      --gold:     #c9a227;
+      --navy:     #0f2340;
+      --gray-900: #111827;
+      --gray-700: #374151;
+      --gray-500: #6b7280;
+      --gray-300: #d1d5db;
+      --gray-100: #f3f4f6;
+      --white:    #ffffff;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.10);
+      --shadow-lg: 0 10px 40px rgba(0,0,0,.14);
+      --shadow-xl: 0 20px 60px rgba(0,0,0,.18);
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+
+    /* ─────────────────────────────────────────────
+       TYPOGRAPHY UTILITIES
+    ───────────────────────────────────────────── */
+    .section-label {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--teal-600);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--gray-900);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      max-width: 640px;
+      line-height: 1.75;
+    }
+    .teal { color: var(--teal-600); }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .section { padding: 96px 0; }
+    .section-alt { background: var(--teal-50); }
+
+    /* ─────────────────────────────────────────────
+       NAV
+    ───────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,168,168,.12);
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: var(--shadow-md); }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--teal-800);
+      text-decoration: none;
+      letter-spacing: -.01em;
+    }
+    .nav-logo span { color: var(--teal-500); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--gray-700);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--teal-600); }
+    .nav-cta {
+      background: var(--teal-600);
+      color: var(--white) !important;
+      padding: .5rem 1.25rem;
+      border-radius: 50px;
+      font-weight: 600 !important;
+      transition: background .2s, transform .15s !important;
+    }
+    .nav-cta:hover { background: var(--teal-700) !important; transform: translateY(-1px); }
+
+    /* Hamburger (mobile) */
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--teal-700); border-radius: 2px; transition: .3s; }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px; left: 0; right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1rem;
+        border-bottom: 1px solid var(--gray-300);
+        box-shadow: var(--shadow-md);
+      }
+      .nav-links.open { display: flex; }
+    }
+
+    /* ─────────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--teal-900) 55%, var(--teal-700) 100%);
+      padding-top: 68px;
+    }
+
+    /* Geometric background shapes */
+    .hero-shapes { position: absolute; inset: 0; pointer-events: none; }
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: .07;
+      background: var(--white);
+    }
+    .shape-1 { width: 600px; height: 600px; top: -200px; right: -100px; }
+    .shape-2 { width: 400px; height: 400px; bottom: -100px; left: -150px; }
+    .shape-3 { width: 200px; height: 200px; top: 40%; right: 25%; }
+
+    /* Animated grid lines */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,168,168,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,168,168,.08) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content { position: relative; z-index: 2; width: 100%; }
+    .hero-grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(0,168,168,.2);
+      border: 1px solid rgba(0,168,168,.4);
+      color: var(--teal-300);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.75rem;
+    }
+    .hero-badge::before { content: '●'; font-size: .5rem; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title .highlight {
+      color: var(--teal-400);
+      position: relative;
+    }
+    .hero-title .highlight::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 4px; right: 0;
+      height: 3px;
+      background: var(--teal-400);
+      border-radius: 2px;
+      opacity: .5;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,.75);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 560px;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .95rem;
+      font-weight: 600;
+      padding: .85rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all .25s;
+    }
+    .btn-primary {
+      background: var(--teal-500);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(0,168,168,.4);
+    }
+    .btn-primary:hover { background: var(--teal-400); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,168,168,.5); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,.35);
+    }
+    .btn-outline:hover { border-color: var(--teal-400); color: var(--teal-300); transform: translateY(-2px); }
+
+    /* Hero stats card */
+    .hero-stats-card {
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+    .hero-stats-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .85rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { font-size: .85rem; color: rgba(255,255,255,.6); }
+    .stat-value { font-size: 1.4rem; font-weight: 800; color: var(--teal-400); }
+    .stat-unit { font-size: .75rem; color: rgba(255,255,255,.4); }
+
+    .hero-credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin-top: 2rem;
+    }
+    .cred-tag {
+      background: rgba(0,168,168,.15);
+      border: 1px solid rgba(0,168,168,.3);
+      color: var(--teal-200);
+      font-size: .75rem;
+      font-weight: 600;
+      padding: .3rem .75rem;
+      border-radius: 50px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid-layout { grid-template-columns: 1fr; }
+      .hero-stats-card { display: none; }
+    }
+
+    /* ─────────────────────────────────────────────
+       TRUST BAR
+    ───────────────────────────────────────────── */
+    .trust-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-100);
+      padding: 1.75rem 0;
+    }
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      white-space: nowrap;
+    }
+    .trust-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--teal-50);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       ABOUT
+    ───────────────────────────────────────────── */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-card-main {
+      background: linear-gradient(135deg, var(--teal-800) 0%, var(--teal-600) 100%);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-card-main::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.05);
+    }
+    .about-card-main::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.04);
+    }
+    .about-initials {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.15);
+      border: 3px solid rgba(255,255,255,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+    .about-card-main h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: .25rem;
+    }
+    .about-card-main p { font-size: .9rem; opacity: .75; margin-bottom: 1.5rem; }
+    .about-pill-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .about-pill {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      color: var(--white);
+      font-size: .75rem;
+      font-weight: 600;
+      padding: .3rem .8rem;
+      border-radius: 50px;
+    }
+    .about-float-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: absolute;
+    }
+    .about-float-1 { bottom: -24px; right: -24px; }
+    .about-float-2 { top: -16px; right: -16px; }
+    .float-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--teal-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .float-text p { font-size: .7rem; color: var(--gray-500); font-weight: 500; }
+    .float-text strong { font-size: .95rem; color: var(--gray-900); font-weight: 700; }
+
+    .about-text .section-subtitle { max-width: 100%; }
+    .about-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: .75rem; }
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      font-size: .95rem;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+    .check {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--teal-100);
+      color: var(--teal-700);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .75rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .about-layout { grid-template-columns: 1fr; }
+      .about-visual { display: none; }
+    }
+
+    /* ─────────────────────────────────────────────
+       SERVICES
+    ───────────────────────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
+      border: 1px solid var(--gray-100);
+      transition: all .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal-600), var(--teal-400));
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+    .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: var(--teal-200); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: var(--teal-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.25rem;
+    }
+    .service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--gray-900); margin-bottom: .5rem; }
+    .service-card p { font-size: .875rem; color: var(--gray-500); line-height: 1.7; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+    .tag {
+      background: var(--teal-50);
+      color: var(--teal-700);
+      font-size: .7rem;
+      font-weight: 600;
+      padding: .2rem .6rem;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+
+    /* ─────────────────────────────────────────────
+       USE CASES (IMPACT)
+    ───────────────────────────────────────────── */
+    .cases-intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .case-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 2rem;
+      border: 1px solid var(--gray-100);
+      transition: box-shadow .3s, transform .3s;
+    }
+    .case-card:hover { box-shadow: var(--shadow-xl); transform: translateY(-3px); }
+    .case-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding: 2rem 2.5rem;
+      background: linear-gradient(135deg, var(--teal-900) 0%, var(--teal-700) 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .case-header::after {
+      content: '';
+      position: absolute;
+      right: -40px; top: -40px;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.05);
+    }
+    .case-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: rgba(255,255,255,.15);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .case-header-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: .4rem;
+    }
+    .case-header-text p { font-size: .875rem; opacity: .75; }
+    .case-company-badge {
+      margin-left: auto;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      color: var(--white);
+      font-size: .75rem;
+      font-weight: 700;
+      padding: .4rem 1rem;
+      border-radius: 50px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .case-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .case-section {
+      padding: 2rem 2.5rem;
+    }
+    .case-section + .case-section {
+      border-left: 1px solid var(--gray-100);
+    }
+    .case-section h4 {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--teal-600);
+      margin-bottom: 1rem;
+    }
+    .case-section ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+    .case-section ul li {
+      font-size: .875rem;
+      color: var(--gray-700);
+      padding-left: 1.25rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    .case-section ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--teal-500);
+      font-weight: 700;
+    }
+    .case-metrics {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .metric-pill {
+      background: var(--teal-50);
+      border: 1px solid var(--teal-200);
+      border-radius: var(--radius);
+      padding: .75rem 1.25rem;
+      text-align: center;
+      flex: 1;
+      min-width: 100px;
+    }
+    .metric-pill .metric-num {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--teal-700);
+      line-height: 1;
+      margin-bottom: .2rem;
+    }
+    .metric-pill .metric-desc {
+      font-size: .72rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    @media (max-width: 700px) {
+      .case-body { grid-template-columns: 1fr; }
+      .case-section + .case-section { border-left: none; border-top: 1px solid var(--gray-100); }
+      .case-header { flex-wrap: wrap; }
+    }
+
+    /* ─────────────────────────────────────────────
+       EXPERIENCE TIMELINE
+    ───────────────────────────────────────────── */
+    .timeline { position: relative; padding-left: 2.5rem; margin-top: 3rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: .75rem;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--teal-600), var(--teal-200));
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      animation: fadeInLeft .4s ease both;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -2.5rem;
+      top: .4rem;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--teal-500);
+      z-index: 1;
+      transition: background .2s;
+    }
+    .timeline-item:hover .timeline-dot { background: var(--teal-500); }
+    .timeline-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.75rem 2rem;
+      border: 1px solid var(--gray-100);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .25s, transform .25s;
+    }
+    .timeline-item:hover .timeline-card { box-shadow: var(--shadow-md); transform: translateX(4px); }
+    .timeline-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: .5rem;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .timeline-role { font-size: 1.05rem; font-weight: 700; color: var(--gray-900); }
+    .timeline-period {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--teal-600);
+      background: var(--teal-50);
+      padding: .25rem .75rem;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+    .timeline-company { font-size: .875rem; font-weight: 600; color: var(--teal-700); margin-bottom: .25rem; }
+    .timeline-product { font-size: .8rem; color: var(--gray-500); margin-bottom: .75rem; font-style: italic; }
+    .timeline-highlights { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+    .timeline-highlights li {
+      font-size: .85rem;
+      color: var(--gray-600);
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .timeline-highlights li::before { content: '•'; position: absolute; left: 0; color: var(--teal-500); font-weight: 700; }
+
+    /* ─────────────────────────────────────────────
+       CREDENTIALS
+    ───────────────────────────────────────────── */
+    .creds-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .cred-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--gray-100);
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .25s, transform .25s;
+    }
+    .cred-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .cred-icon-box {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--teal-600), var(--teal-400));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .cred-body h4 { font-size: .95rem; font-weight: 700; color: var(--gray-900); margin-bottom: .2rem; }
+    .cred-body p { font-size: .8rem; color: var(--gray-500); line-height: 1.5; }
+    .cred-body .issuer { font-size: .75rem; color: var(--teal-600); font-weight: 600; margin-top: .3rem; }
+
+    @media (max-width: 700px) { .creds-grid { grid-template-columns: 1fr; } }
+
+    /* ─────────────────────────────────────────────
+       SKILLS
+    ───────────────────────────────────────────── */
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .skill-group h4 {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid var(--teal-100);
+    }
+    .skill-item { display: flex; flex-direction: column; gap: .25rem; margin-bottom: .75rem; }
+    .skill-name { font-size: .85rem; font-weight: 500; color: var(--gray-700); display: flex; justify-content: space-between; }
+    .skill-bar { height: 6px; background: var(--gray-100); border-radius: 99px; overflow: hidden; }
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal-600), var(--teal-400));
+      border-radius: 99px;
+      width: 0;
+      transition: width 1.2s ease;
+    }
+
+    @media (max-width: 700px) { .skills-layout { grid-template-columns: 1fr; } }
+
+    /* ─────────────────────────────────────────────
+       CONTACT
+    ───────────────────────────────────────────── */
+    #contact {
+      background: linear-gradient(135deg, var(--teal-900) 0%, var(--navy) 100%);
+      color: var(--white);
+    }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 640px;
+      gap: 5rem;
+      align-items: start;
+    }
+    #contact .section-label { color: var(--teal-300); }
+    #contact .section-title { color: var(--white); }
+    #contact .section-subtitle { color: rgba(255,255,255,.65); }
+
+    .contact-info { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .contact-item-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .contact-item p { font-size: .8rem; color: rgba(255,255,255,.5); margin-bottom: .1rem; font-weight: 500; }
+    .contact-item a, .contact-item span {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .contact-item a:hover { color: var(--teal-300); }
+
+    /* Contact form */
+    .contact-form {
+      background: rgba(255,255,255,.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+    .contact-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1rem; }
+    .form-group label { font-size: .8rem; font-weight: 600; color: rgba(255,255,255,.6); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 8px;
+      padding: .75rem 1rem;
+      color: var(--white);
+      font-size: .9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color .2s, background .2s;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,.3); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--teal-400);
+      background: rgba(255,255,255,.1);
+    }
+    .form-group select option { background: var(--teal-900); color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .btn-submit {
+      width: 100%;
+      justify-content: center;
+      background: var(--teal-500);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(0,168,168,.3);
+      font-size: 1rem;
+      padding: 1rem;
+    }
+    .btn-submit:hover { background: var(--teal-400); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,168,168,.4); }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .form-success .success-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .form-success p { color: rgba(255,255,255,.8); }
+    .form-success h4 { color: var(--white); font-size: 1.2rem; margin-bottom: .5rem; }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 2rem;
+      font-size: .85rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    footer span { color: var(--teal-400); }
+
+    /* ─────────────────────────────────────────────
+       ANIMATIONS
+    ───────────────────────────────────────────── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─────────────────────────────────────────────
+       SCROLL TO TOP
+    ───────────────────────────────────────────── */
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--teal-600);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s, transform .3s;
+      border: none;
+      z-index: 50;
+    }
+    .scroll-top.visible { opacity: 1; pointer-events: auto; }
+    .scroll-top:hover { background: var(--teal-500); transform: translateY(-3px); }
+    /* News callout */
+    .news-callout-section {
+      grid-column: 1 / -1;
+      background: var(--navy);
+      padding: 2rem 2.5rem;
+    }
+    .news-callout-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: .9rem;
+    }
+    .news-callout-eyebrow-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,.15);
+    }
+    .news-callout-eyebrow-text {
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .news-callout {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.15);
+      border-left: 5px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.75rem;
+    }
+    .news-callout-badge {
+      flex-shrink: 0;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .45rem .7rem;
+      border-radius: 6px;
+      white-space: nowrap;
+      align-self: flex-start;
+    }
+    .news-callout-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+    .news-callout-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--teal-300);
+    }
+    .news-callout-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      line-height: 1.45;
+    }
+    .news-callout-title:hover { color: var(--gold); text-decoration: underline; }
+    .news-callout-body {
+      font-size: .82rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .news-callout-link {
+      flex-shrink: 0;
+      align-self: center;
+      font-size: .8rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-decoration: none;
+      white-space: nowrap;
+      padding: .55rem 1.2rem;
+      border-radius: 20px;
+      background: var(--gold);
+      transition: background .2s, transform .15s;
+    }
+    .news-callout-link:hover {
+      background: #e0b430;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero">Anindita <span>Bose</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Expertise</a></li>
+      <li><a href="#usecases">Impact</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  <div class="hero-grid"></div>
+  <div class="container hero-content">
+    <div class="hero-grid-layout">
+      <div>
+        <div class="hero-badge">Risk Management &amp; AI Leader | Financial Services</div>
+        <h1 class="hero-title">
+          Credit Risk &amp; <span class="highlight">Data &amp; AI</span><br/>
+          Senior Leader
+        </h1>
+        <p class="hero-desc">
+          20+ years leading credit risk and data science functions across financial services.
+          Currently driving AI product delivery at Commonwealth Bank of Australia, Financial Services — bringing together deep credit risk
+          domain expertise and hands-on AI build capability to lead high-performing, commercially
+          focused data science teams.
+        </p>
+        <div class="hero-ctas">
+          <a href="#usecases" class="btn btn-primary">
+            &#128200; View Impact Cases
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            &#128222; Let's Connect
+          </a>
+        </div>
+        <div class="hero-credentials">
+          <span class="cred-tag">Specialization in Credit Risk Management</span>
+          <span class="cred-tag">CBA &mdash; AI Chapter Lead</span>
+          <span class="cred-tag">Zip &mdash; Director of Risk Management & Data Science</span>
+          <span class="cred-tag">Slice &mdash; Head of Risk</span>
+          <span class="cred-tag">CPRM&#174; Accredited</span>
+          <span class="cred-tag">ISO 31000 Expert</span>
+          <span class="cred-tag">M.Stat. ISI Gold Medallist</span>
+        </div>
+      </div>
+
+      <div class="hero-stats-card">
+        <h3>&#10024; Career Impact at a Glance</h3>
+        <div class="stat-row">
+          <div class="stat-label">Years in Credit &amp; Risk</div>
+          <div>
+            <div class="stat-value">20+</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">Underwriting Automation at Zip</div>
+          <div>
+            <div class="stat-value">End-to-End</div>
+            <div class="stat-unit">serviceability assessment &amp; income verification</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">Credit Loss Reduction (YoY)</div>
+          <div>
+            <div class="stat-value">29%+</div>
+            <div class="stat-unit">at Zip Co</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">Collections Uplift</div>
+          <div>
+            <div class="stat-value">200%+</div>
+            <div class="stat-unit">via strategy optimisation</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">IRB Accreditation</div>
+          <div>
+            <div class="stat-value">APRA &amp; ECB</div>
+            <div class="stat-unit">dual regulatory approval for ING</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">IFRS9 Development & Implementation</div>
+          <div>
+            <div class="stat-unit">ING, CBA, Zip</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">ML Models Productionised</div>
+          <div>
+            <div class="stat-value">50+</div>
+            <div class="stat-unit">application, bureau, behaviour, collection</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">AI Products Shipping at CBA</div>
+          <div>
+            <div class="stat-unit">Agentic Solutions for Staff Expense mgmt, Invoice Processing, Assurance AI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRUST BAR ─────────────────────────────────────────────────────────── -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <div class="trust-icon">&#127963;</div>
+        Zip Co (ASX: ZIP)
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">&#127981;</div>
+        Commonwealth Bank (CBA)
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">&#127758;</div>
+        ING Bank Australia
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">&#128736;</div>
+        FICO
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">&#9992;</div>
+        Slice Travel
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">&#128200;</div>
+        Experian
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ABOUT ─────────────────────────────────────────────────────────────── -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-visual">
+        <div class="about-card-main">
+          <div class="about-initials">AB</div>
+          <h3>Anindita Bose</h3>
+          <p>AI Chapter Lead, CBA &mdash; Credit Risk &amp; AI Expert</p>
+          <div class="about-pill-row">
+            <span class="about-pill">Sydney, Australia</span>
+            <span class="about-pill">Global Experience</span>
+            <span class="about-pill">20+ Years</span>
+          </div>
+        </div>
+        <div class="about-float-card about-float-1">
+          <div class="float-icon">&#127942;</div>
+          <div class="float-text">
+            <p>ISI Gold Medal</p>
+            <strong>Best Statistician Award</strong>
+          </div>
+        </div>
+        <div class="about-float-card about-float-2">
+          <div class="float-icon">&#128203;</div>
+          <div class="float-text">
+            <p>Certified Practicing Risk Manager</p>
+            <strong>CPRM&#174; &mdash; RMIA</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <span class="section-label">About Me</span>
+        <h2 class="section-title">Credit Risk Depth. AI Build Capability. Real Business Impact.</h2>
+        <p class="section-subtitle">
+          Currently serving as AI Chapter Lead at Commonwealth Bank of Australia,
+          building AI products for Financial Services, including staff expense management, invoice processing, proactive insights and recommendation engines and compliance assurance.
+          My unique value is the rare combination of deep credit risk domain expertise and hands-on
+          capability to architect and ship production AI solutions for real-world financial problems.
+        </p>
+        <ul class="about-list">
+          <li>
+            <div class="check">&#10003;</div>
+            At CBA, building AI products: automated expense management, intelligent invoice processing, and assurance AI tools that reviews customer chat data to detect compliance breaches including PII leakage and commercial messaging violations etc.
+          </li>
+          <li>
+            <div class="check">&#10003;</div>
+            Built Zip Co's entire Risk Management &amp; Data Science function from the ground up, scaling to a 20-person team and delivering a 29% year-on-year reduction in credit losses. Helped steer the business to a strong, profitable footing despite a sharply rising cash rate environment during FY22–FY24 (0.10% → 4.35%) through proactive and disciplined risk management.
+          </li>
+          <li>
+            <div class="check">&#10003;</div>
+            Produced best-in-class IRB models at ING Bank Australia, acknowledged by external validators as the highest-quality IRB documentation they had reviewed.
+          </li>
+          <li>
+            <div class="check">&#10003;</div>
+            Productionised end-to-end automated credit decisioning engines across BNPL, revolving loans, credit cards, mortgages, and SME lending.
+          </li>
+          <li>
+            <div class="check">&#10003;</div>
+            Gold Medallist and Best Student Statistician from the Indian Statistical Institute — the foundation of a career built on quantitative rigour.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ──────────────────────────────────────────────────────────── -->
+<section id="services" class="section section-alt">
+  <div class="container">
+    <div style="text-align:center; max-width:660px; margin:0 auto;">
+      <span class="section-label">Leadership Expertise</span>
+      <h2 class="section-title">Where I Build Teams &amp; Drive Results</h2>
+      <p class="section-subtitle" style="margin:0 auto;">
+        From standing up credit risk functions and AI capability from scratch, to scaling teams
+        and embedding governance across lending portfolios — these are the domains where I lead.
+      </p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="service-icon">&#127968;</div>
+        <h3>Credit Risk Management Across Lending Products</h3>
+        <p>20+ years managing credit risk across revolving credit, residential mortgages, and BNPL — spanning origination strategy, behavioural risk, arrears management, and regulatory capital. Deep end-to-end ownership across the full credit lifecycle.</p>
+        <div class="service-tags">
+          <span class="tag">Revolving Loans</span>
+          <span class="tag">Residential Mortgages</span>
+          <span class="tag">BNPL</span>
+          <span class="tag">Credit Lifecycle</span>
+          <span class="tag">Portfolio Management</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">&#129302;</div>
+        <h3>AI Solutions for Financial Services</h3>
+        <p>Design and ship production AI products for banking and financial services — from intelligent document processing and expense management automation to compliance assurance AI that monitors customer communications for regulatory breaches.</p>
+        <div class="service-tags">
+          <span class="tag">LLMs</span>
+          <span class="tag">NLP</span>
+          <span class="tag">PII Detection</span>
+          <span class="tag">Document AI</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">&#129504;</div>
+        <h3>ML-Driven Credit Decisioning</h3>
+        <p>Design and deploy automated credit decisioning engines — application scoring, limit optimisation, and real-time capacity assessment using banking, bureau, and behavioural data.</p>
+        <div class="service-tags">
+          <span class="tag">XGBoost</span>
+          <span class="tag">Logistic Regression</span>
+          <span class="tag">Decision Trees</span>
+          <span class="tag">GLMs</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">&#128203;</div>
+        <h3>Credit Risk Governance</h3>
+        <p>Establish end-to-end risk governance frameworks covering underwriting, arrears reporting, collection strategies, hardship, and payment processing — built for internal audit readiness.</p>
+        <div class="service-tags">
+          <span class="tag">ISO 31000</span>
+          <span class="tag">Policy Design</span>
+          <span class="tag">Risk Committees</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">&#128178;</div>
+        <h3>IFRS 9 &amp; Regulatory Provisioning</h3>
+        <p>Develop and implement IFRS 9 / AASB 9 compliant loan loss provisioning models, automate monthly provisioning workflows, and support APRA regulatory submissions.</p>
+        <div class="service-tags">
+          <span class="tag">IFRS 9</span>
+          <span class="tag">AASB 9</span>
+          <span class="tag">PD/LGD/EAD</span>
+          <span class="tag">APRA</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">&#128202;</div>
+        <h3>Data Pipelines &amp; Risk Dashboards</h3>
+        <p>Build scalable, real-time data pipelines and self-serve BI dashboards that give executives instant visibility into credit quality, collections performance, and portfolio profitability.</p>
+        <div class="service-tags">
+          <span class="tag">BigQuery</span>
+          <span class="tag">Snowflake</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">Power BI</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">&#128161;</div>
+        <h3>Collection &amp; Recovery Optimisation</h3>
+        <p>Design data-driven collection communication strategies, champion-challenger frameworks for DCA/inhouse/debt sale, and discount offer optimisation to maximise recovery rates.</p>
+        <div class="service-tags">
+          <span class="tag">Behavioural Scoring</span>
+          <span class="tag">Champion-Challenger</span>
+          <span class="tag">Debt Recovery</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">&#128736;</div>
+        <h3>Basel IRB Model Development</h3>
+        <p>End-to-end development of IRB regulatory models (PD, EAD, LGD) for retail portfolios — including model documentation, independent validation support, and APRA submissions.</p>
+        <div class="service-tags">
+          <span class="tag">Basel III</span>
+          <span class="tag">IRB Models</span>
+          <span class="tag">ICAAP</span>
+          <span class="tag">Stress Testing</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">&#128269;</div>
+        <h3>Pricing Strategy &amp; Profitability</h3>
+        <p>Leverage ML models and portfolio analytics to design risk-adjusted pricing strategies that improve margins while maintaining regulatory compliance and competitive positioning.</p>
+        <div class="service-tags">
+          <span class="tag">Risk-Based Pricing</span>
+          <span class="tag">Profitability Analysis</span>
+          <span class="tag">Portfolio Analytics</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">&#128104;&#8205;&#128188;</div>
+        <h3>Risk Team Build &amp; Leadership</h3>
+        <p>Recruit, structure, and develop high-performing risk and data science teams. Establish operating rhythms, model monitoring processes, and a culture of data-driven decision-making.</p>
+        <div class="service-tags">
+          <span class="tag">Team Building</span>
+          <span class="tag">Talent Strategy</span>
+          <span class="tag">Model Governance</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">&#127919;</div>
+        <h3>Lending Policy &amp; Underwriting</h3>
+        <p>Draft and review underwriting and receivables management policies for consumer and SME lending products, ensuring alignment with regulatory requirements and risk appetite.</p>
+        <div class="service-tags">
+          <span class="tag">NCCP</span>
+          <span class="tag">Responsible Lending</span>
+          <span class="tag">Underwriting Policy</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── USE CASES ─────────────────────────────────────────────────────────── -->
+<section id="usecases" class="section">
+  <div class="container">
+    <div class="cases-intro">
+      <div>
+        <span class="section-label">Proven Impact</span>
+        <h2 class="section-title">Real Work. Measurable Results.</h2>
+      </div>
+      <p class="section-subtitle">
+        Selected engagements demonstrating the business value delivered across
+        enterprise AI, fintech, retail banking, and global analytics.
+      </p>
+    </div>
+
+    <!-- CASE 1 -->
+    <div class="case-card reveal">
+      <div class="case-header">
+        <div class="case-num">01</div>
+        <div class="case-header-text">
+          <h3>Credit Risk Governance &amp; Loss Reduction</h3>
+          <p>Built an end-to-end credit risk governance function that drove a 29% year-on-year reduction in credit losses.</p>
+        </div>
+        <div class="case-company-badge">Zip Co &mdash; ASX: ZIP</div>
+      </div>
+      <div class="case-body">
+        <div class="case-section">
+          <h4>What Was Done</h4>
+          <ul>
+            <li>Established governance practices across six critical operational risk processes: credit assessment &amp; underwriting, payment processing, arrears data &amp; reporting, collection treatment strategy, hardship &amp; payment plans, and arrears repayment attempts.</li>
+            <li>Implemented fully automated risk controls across the end-to-end customer lifecycle, creating systematic audit trails for each decisioning step.</li>
+            <li>Introduced a Credit Risk Governance Committee with monthly reporting to the Board, creating accountability and escalation pathways.</li>
+            <li>Designed automated underwriting audit processes reviewed by the internal audit team on a regular cycle.</li>
+          </ul>
+        </div>
+        <div class="case-section">
+          <h4>Business Value Delivered</h4>
+          <div class="case-metrics">
+            <div class="metric-pill">
+              <span class="metric-num">29%</span>
+              <span class="metric-desc">YoY reduction in credit losses</span>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-num">6</span>
+              <span class="metric-desc">governance processes automated end-to-end</span>
+            </div>
+          </div>
+          <ul style="margin-top:1rem">
+            <li>Directly contributed to improved portfolio profitability and reduced operational risk exposure.</li>
+            <li>Gave the CRO real-time visibility into credit quality metrics and emerging portfolio risks.</li>
+            <li>Timely identification and mitigation of payment processing risks.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 2 -->
+    <div class="case-card reveal">
+      <div class="case-header">
+        <div class="case-num">02</div>
+        <div class="case-header-text">
+          <h3>ML-Powered Automated Credit Decisioning Engine</h3>
+          <p>Productionised a multi-model credit decisioning engine with real-time limit optimisation across the full customer lifecycle.</p>
+        </div>
+        <div class="case-company-badge">Zip Co &mdash; BNPL &amp; Revolving &amp; Personal Loans</div>
+      </div>
+      <div class="case-body">
+        <div class="case-section">
+          <h4>What Was Done</h4>
+          <ul>
+            <li>Designed and deployed a decision engine integrating application scores, banking scores, bureau scores, behaviour scores, and income verification for limit approval decisioning.</li>
+            <li>Introduced real-time capacity assessment and income verification using open banking data, reducing manual assessment time and improving accuracy.</li>
+            <li>Implemented behaviour scores for proactive credit limit increases (incoming applications and outgoing offers) and credit limit decreases based on repayment behaviour.</li>
+            <li>Built a trigger-based system for real-time limit increase offers, increasing revenue while maintaining risk-adjusted returns.</li>
+          </ul>
+        </div>
+        <div class="case-section">
+          <h4>Business Value Delivered</h4>
+          <div class="case-metrics">
+            <div class="metric-pill">
+              <span class="metric-num">Real-time</span>
+              <span class="metric-desc">automated income &amp; capacity assessment</span>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-num">15+</span>
+              <span class="metric-desc">ML models productionised</span>
+            </div>
+          </div>
+          <ul style="margin-top:1rem">
+            <li>Dramatically reduced time-to-decision and manual underwriting effort, enabling scale without proportional headcount growth.</li>
+            <li>Improved risk-adjusted returns through optimal limit setting — approving more customers at lower risk thresholds by using richer data signals.</li>
+            <li>Enabled profitable limit management strategies that reduced write-off rates while increasing customer spend and revenue.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 3 -->
+    <div class="case-card reveal">
+      <div class="case-header">
+        <div class="case-num">03</div>
+        <div class="case-header-text">
+          <h3>Collections Optimisation &amp; Recovery Strategy</h3>
+          <p>Redesigned collection communications and late-stage recovery strategies, achieving a 200% increase in collections performance.</p>
+        </div>
+        <div class="case-company-badge">Zip Co &mdash; Arrears &amp; Recovery</div>
+      </div>
+      <div class="case-body">
+        <div class="case-section">
+          <h4>What Was Done</h4>
+          <ul>
+            <li>Developed personalised, data-driven communication strategies for payment reminders, replacing one-size-fits-all messaging with behavioural segmentation.</li>
+            <li>Designed and tested champion-challenger frameworks across three recovery levers: inhouse vs. DCA, discount offer optimisation, and debt sale timing.</li>
+            <li>Introduced collection scoring models to prioritise contact strategies and allocate resources to highest-recovery segments.</li>
+            <li>Implemented hardship plan optimisation to improve repayment outcomes while meeting regulatory obligations.</li>
+          </ul>
+        </div>
+        <div class="case-section">
+          <h4>Business Value Delivered</h4>
+          <div class="case-metrics">
+            <div class="metric-pill">
+              <span class="metric-num">200%</span>
+              <span class="metric-desc">increase in collections</span>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-num">&#8595; Bad Debt</span>
+              <span class="metric-desc">improved recovery rate on write-offs</span>
+            </div>
+          </div>
+          <ul style="margin-top:1rem">
+            <li>Significant increase in dollar recovery on delinquent accounts through smarter treatment allocation.</li>
+            <li>Reduced DCA cost by identifying accounts recoverable inhouse — directly improving net recovery margins.</li>
+            <li>Compliance-friendly hardship strategies that improved customer satisfaction while maintaining recovery performance.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 4 -->
+    <div class="case-card reveal">
+      <div class="case-header">
+        <div class="case-num">04</div>
+        <div class="case-header-text">
+          <h3>Best-in-Class IRB Regulatory Model Development</h3>
+          <p>Led end-to-end IRB model development for ING Australia's retail mortgage portfolio — recognised as best-in-class internally within the ING Group.</p>
+        </div>
+        <div class="case-company-badge">ING Bank Australia &mdash; Retail Mortgage IRB</div>
+      </div>
+      <div class="case-body">
+        <div class="case-section">
+          <h4>What Was Done</h4>
+          <ul>
+            <li>Served as hands-on project manager and subject matter expert for end-to-end IRB model development: data extraction, model design compliant with APRA and ECB requirements, modeling, model approval, independent validation support, group model validation, and APRA regulatory submission.</li>
+            <li>Developed Probability of Default (PD), Exposure at Default (EAD), and Loss Given Default (LGD) models for the Australian retail mortgage book.</li>
+            <li>Coordinated responses to all APRA review questions, clarifications, and independent validation findings.</li>
+            <li>Applied advanced statistical techniques to ensure model robustness under stress scenarios and economic cycles.</li>
+          </ul>
+        </div>
+        <div class="case-section">
+          <h4>Business Value Delivered</h4>
+          <div class="case-metrics">
+            <div class="metric-pill">
+              <span class="metric-num">Best</span>
+              <span class="metric-desc">IRB models</span>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-num">APRA & ECB</span>
+              <span class="metric-desc">Advanced accreditation achieved</span>
+            </div>
+          </div>
+          <ul style="margin-top:1rem">
+            <li>External validators acknowledged the model documentation as the highest quality IRB model documentation they had reviewed — reducing remediation cycles and accelerating approval.</li>
+            <li>Advanced IRB accreditation unlocked lower regulatory capital requirements for the mortgage portfolio, with direct P&amp;L benefit.</li>
+          </ul>
+        </div>
+        <div class="news-callout-section">
+          <div class="news-callout-eyebrow">
+            <div class="news-callout-eyebrow-line"></div>
+            <span class="news-callout-eyebrow-text">In the News</span>
+            <div class="news-callout-eyebrow-line"></div>
+          </div>
+          <div class="news-callout">
+            <div class="news-callout-badge">APRA</div>
+            <div class="news-callout-content">
+              <span class="news-callout-label">Regulatory Announcement &bull; 19 March 2018</span>
+              <a class="news-callout-title" href="https://www.apra.gov.au/news-and-publications/apra-approves-ing-bank-australia-limited-to-use-internal-models-to-calculate" target="_blank" rel="noopener">
+                APRA approves ING Bank (Australia) Limited to use internal models to calculate regulatory capital
+              </a>
+              <p class="news-callout-body">ING became the first ADI to receive APRA advanced accreditation since the regulator revised its accreditation process in 2015 — a direct outcome of this end-to-end IRB model development engagement.</p>
+            </div>
+            <a class="news-callout-link" href="https://www.apra.gov.au/news-and-publications/apra-approves-ing-bank-australia-limited-to-use-internal-models-to-calculate" target="_blank" rel="noopener">Read&nbsp;&rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 5 -->
+    <div class="case-card reveal">
+      <div class="case-header">
+        <div class="case-num">05</div>
+        <div class="case-header-text">
+          <h3>Real-Time Risk Data Platform &amp; AI-Powered Monitoring</h3>
+          <p>Designed a scalable BigQuery data pipeline with Tableau dashboards and AI-powered monitoring for a travel BNPL start-up.</p>
+        </div>
+        <div class="case-company-badge">Slice Travel &mdash; BNPL</div>
+      </div>
+      <div class="case-body">
+        <div class="case-section">
+          <h4>What Was Done</h4>
+          <ul>
+            <li>Architected and implemented a scalable data pipeline in BigQuery, enabling real-time data integration from multiple source systems with minimal manual intervention.</li>
+            <li>Developed executive-facing Tableau dashboards tracking transaction value, revenue, repayment performance, arrears, and portfolio profitability across AU, US, and Canadian portfolios.</li>
+            <li>Deployed Tableau Pulse — an AI-powered monitoring tool — to continuously track critical metrics, automatically surface anomalies, and trigger root-cause analysis workflows.</li>
+            <li>Conducted comprehensive profitability analyses across three geographies, leading to data-driven pricing adjustments that improved margins.</li>
+          </ul>
+        </div>
+        <div class="case-section">
+          <h4>Business Value Delivered</h4>
+          <div class="case-metrics">
+            <div class="metric-pill">
+              <span class="metric-num">Real-time</span>
+              <span class="metric-desc">risk &amp; profitability visibility for leadership</span>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-num">AI</span>
+              <span class="metric-desc">monitoring &amp; proactive alerting deployed</span>
+            </div>
+          </div>
+          <ul style="margin-top:1rem">
+            <li>Reduced manual reporting effort significantly — freeing the risk team to focus on strategy rather than data wrangling.</li>
+            <li>Enabled proactive identification of emerging risk trends before they became material losses.</li>
+            <li>Data-driven pricing adjustments across three markets delivered improved portfolio margins while maintaining risk controls.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 6 -->
+    <div class="case-card reveal">
+      <div class="case-header">
+        <div class="case-num">06</div>
+        <div class="case-header-text">
+          <h3>IFRS 9 Model Development &amp; Automated Provisioning</h3>
+          <p>Built IFRS 9 models recognised as best across ING Group and established a fully automated monthly provisioning process.</p>
+        </div>
+        <div class="case-company-badge">ING Bank Australia &mdash; IFRS 9</div>
+      </div>
+      <div class="case-body">
+        <div class="case-section">
+          <h4>What Was Done</h4>
+          <ul>
+            <li>Developed IFRS 9 staging and expected credit loss (ECL) models for the Australian retail mortgage portfolio in 2017.</li>
+            <li>Automated multiple modules of the provisioning calculation, including SICR triggers, macro-economic overlay integration, and forward-looking probability of default estimation.</li>
+            <li>Supervised the full transition from IAS 39 to IFRS 9 — establishing a monthly automated process requiring minimal manual intervention.</li>
+            <li>Contributed to the ING Group's global IFRS 9 model development process, with the Australian methodology adopted as a reference standard.</li>
+          </ul>
+        </div>
+        <div class="case-section">
+          <h4>Business Value Delivered</h4>
+          <div class="case-metrics">
+            <div class="metric-pill">
+              <span class="metric-num">Best</span>
+              <span class="metric-desc">IFRS 9 models</span>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-num">Automated</span>
+              <span class="metric-desc">monthly provisioning — minimal manual touch</span>
+            </div>
+          </div>
+          <ul style="margin-top:1rem">
+            <li>Fully automated provisioning reduced month-end close effort and eliminated calculation errors — improving auditability.</li>
+            <li>Forward-looking ECL models improved the accuracy of provisioning estimates, reducing volatility in reported loan loss provisions.</li>
+            <li>The macro-economic indices used in Australian models adopted as a reference standard.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─────────────────────────────────────────────────────────── -->
+<section id="experience" class="section section-alt">
+  <div class="container">
+    <span class="section-label">Career Timeline</span>
+    <h2 class="section-title">20+ Years of Risk &amp; Analytics Leadership</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot" style="border-color: var(--teal-400); background: var(--teal-400);"></div>
+        <div class="timeline-card" style="border: 1.5px solid var(--teal-200); background: var(--teal-50);">
+          <div class="timeline-top">
+            <div class="timeline-role">AI Chapter Lead</div>
+            <div class="timeline-period" style="background: var(--teal-600); color: var(--white);">2025 &mdash; Present &#x25CF;</div>
+          </div>
+          <div class="timeline-company">Commonwealth Bank of Australia (ASX: CBA)</div>
+          <div class="timeline-product">AI Products for Financial Services</div>
+          <ul class="timeline-highlights">
+            <li>Leading the Data Science chapter, building AI products that solve high-value operational and compliance problems at Australia's largest bank.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-top">
+            <div class="timeline-role">Head of Risk</div>
+            <div class="timeline-period">Jan 2025 &mdash; Jul 2025</div>
+          </div>
+          <div class="timeline-company">Slice Pay Later Travel</div>
+          <div class="timeline-product">Travel BNPL / Layby Service Provider</div>
+          <ul class="timeline-highlights">
+            <li>Established BigQuery data pipeline, Tableau dashboards, and AI-powered Pulse monitoring.</li>
+            <li>Led pricing strategy optimisation across AU, US, and Canadian portfolios.</li>
+            <li>Chaired monthly Risk Committee and Pricing Committee.</li>
+            <li>Reviewed AASB9 loan loss provisioning approach and recommended compliance adjustments.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-top">
+            <div class="timeline-role">Director &mdash; Risk Management &amp; Data Science</div>
+            <div class="timeline-period">Aug 2019 &mdash; Dec 2024</div>
+          </div>
+          <div class="timeline-company">Zip Co Ltd (ASX: ZIP)</div>
+          <div class="timeline-product">BNPL, Revolving Loans, SME Lending, Pay-in-4, Personal Loans</div>
+          <ul class="timeline-highlights">
+            <li>Built the Risk Management &amp; Data Science function from the ground up — scaled to 20 professionals.</li>
+            <li>Delivered 29% YoY credit loss reduction and 200% increase in collections performance.</li>
+            <li>Productionised 15+ ML models including application, bureau, banking, behaviour, and collection scores.</li>
+            <li>Established Credit Risk Governance across 6 operational risk processes.</li>
+            <li>Chaired Credit Risk Governance and Finance &amp; Risk Committee meetings.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-top">
+            <div class="timeline-role">Risk Executive &mdash; Provisioning &amp; Stress Testing</div>
+            <div class="timeline-period">Nov 2018 &mdash; Aug 2019</div>
+          </div>
+          <div class="timeline-company">Commonwealth Bank of Australia (ASX: CBA)</div>
+          <div class="timeline-product">IB&amp;M and Treasury</div>
+          <ul class="timeline-highlights">
+            <li>Accountable for loan loss provisioning for IB&amp;M and Treasury portfolios.</li>
+            <li>Facilitated monthly IB&amp;M Loan Loss Provisioning Committee for the CRO.</li>
+            <li>Executed model adjustments for countercyclical buffer and asset value assessments.</li>
+            <li>Supported BCBS data lineage compliance project for provisioning processes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-top">
+            <div class="timeline-role">Manager &mdash; Retail Credit Risk Modelling &amp; Data</div>
+            <div class="timeline-period">Jan 2016 &mdash; Nov 2018</div>
+          </div>
+          <div class="timeline-company">ING Bank Australia</div>
+          <div class="timeline-product">Retail Mortgage, Credit Cards, Personal Loans</div>
+          <ul class="timeline-highlights">
+            <li>Developed best-in-class IRB models (PD, EAD, LGD) for retail mortgage — acknowledged by external validators.</li>
+            <li>Developed best IFRS 9 models across ING Group; automated the monthly provisioning process.</li>
+            <li>Managed APRA regulatory submissions and supported ICAAP and stress testing.</li>
+            <li>Acted as Credit Risk Data Steward — ensuring data quality across risk reporting.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-top">
+            <div class="timeline-role">Analytics Manager</div>
+            <div class="timeline-period">Sep 2014 &mdash; Dec 2015</div>
+          </div>
+          <div class="timeline-company">Experian Decision Analytics</div>
+          <div class="timeline-product">ANZ Region &mdash; Decision Optimisation &amp; Custom Analytics</div>
+          <ul class="timeline-highlights">
+            <li>Led all decision optimisation and custom analytics projects across Australia and New Zealand.</li>
+            <li>Subject matter expert in Basel modelling, lifecycle scoring, and customer segmentation.</li>
+            <li>Provided analytic consulting to major financial institutions across the ANZ region.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-top">
+            <div class="timeline-role">Analytic Science Manager → Lead Consultant</div>
+            <div class="timeline-period">Jun 2005 &mdash; Aug 2014</div>
+          </div>
+          <div class="timeline-company">Fair Isaac Corporation (FICO)</div>
+          <div class="timeline-product">Europe, Asia Pacific, ANZ, Americas, EMEA</div>
+          <ul class="timeline-highlights">
+            <li>Led analytics delivery for Europe and Asia Pacific — Basel modelling and lifecycle scoring solutions.</li>
+            <li>Developed PD, EAD, LGD models, behavioural scores, application scores, and collection scores for clients across Americas, EMEA, and APAC.</li>
+            <li>Managed pre-sales, client relationships, project resources, and analytic delivery across multiple geographies.</li>
+            <li>Promoted three times: Analytic Consultant I → II → Lead Consultant → APJ Lead → Science Manager.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CREDENTIALS ───────────────────────────────────────────────────────── -->
+<section id="credentials" class="section">
+  <div class="container">
+    <div style="text-align:center; max-width:660px; margin:0 auto 3rem;">
+      <span class="section-label">Qualifications &amp; Memberships</span>
+      <h2 class="section-title">Academic Excellence &amp; Professional Recognition</h2>
+    </div>
+    <div class="creds-grid">
+
+      <div class="cred-card reveal">
+        <div class="cred-icon-box">&#127941;</div>
+        <div class="cred-body">
+          <h4>Master of Statistics (M.Stat.) &mdash; Actuarial Statistics</h4>
+          <p>Gold Medal &amp; Best Student Statistician Award recipient. Specialisation in Data Science &amp; ML modelling.</p>
+          <div class="issuer">Indian Statistical Institute (ISI)</div>
+        </div>
+      </div>
+
+      <div class="cred-card reveal">
+        <div class="cred-icon-box">&#127979;</div>
+        <div class="cred-body">
+          <h4>Bachelor of Mathematics (B.Math.)</h4>
+          <p>Rigorous foundation in probability theory, statistical inference, and mathematical modelling.</p>
+          <div class="issuer">Indian Statistical Institute (ISI)</div>
+        </div>
+      </div>
+
+      <div class="cred-card reveal">
+        <div class="cred-icon-box">&#128203;</div>
+        <div class="cred-body">
+          <h4>Certified Practicing Risk Manager (CPRM&#174;)</h4>
+          <p>Recognises advanced proficiency in leading risk initiatives, building organisational resilience, and informed risk-based decision-making.</p>
+          <div class="issuer">Risk Management Institute of Australasia (RMIA)</div>
+        </div>
+      </div>
+
+      <div class="cred-card reveal">
+        <div class="cred-icon-box">&#9889;</div>
+        <div class="cred-body">
+          <h4>ISO 31000 Certified Risk Management Expert</h4>
+          <p>Accredited expert in the international standard for enterprise risk management frameworks.</p>
+        </div>
+      </div>
+
+      <div class="cred-card reveal">
+        <div class="cred-icon-box">&#129302;</div>
+        <div class="cred-body">
+          <h4>Production-Ready Agentic Web Applications</h4>
+          <p>Highly specialised in building production-ready web applications with in-built agentic solutions — end-to-end AI agents embedded directly into business workflows.</p>
+          <div class="issuer">Specialist Capability</div>
+        </div>
+      </div>
+
+      <div class="cred-card reveal">
+        <div class="cred-icon-box">&#128200;</div>
+        <div class="cred-body">
+          <h4>Specialisation in Data Science &amp; Machine Learning</h4>
+          <p>Expert practitioner in Python (Pandas, NumPy, scikit-learn), SQL, Power BI, Tableau — on Snowflake, Databricks, BigQuery, AWS, SAS, and SQL Server.</p>
+          <div class="issuer">Applied across 20+ years of production modelling</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS ────────────────────────────────────────────────────────────── -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="text-align:center; max-width:600px; margin:0 auto;">
+      <span class="section-label">Technical Proficiency</span>
+      <h2 class="section-title">Tools &amp; Technologies</h2>
+    </div>
+    <div class="skills-layout">
+      <div class="skill-group">
+        <h4>Data Science &amp; ML</h4>
+        <div class="skill-item">
+          <div class="skill-name"><span>Python (Pandas, NumPy, scikit-learn)</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>SQL &amp; Advanced Querying</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="98"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>XGBoost / Decision Trees / GLMs</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>SAS</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Data Platforms</h4>
+        <div class="skill-item">
+          <div class="skill-name"><span>Snowflake</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>Google BigQuery</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>Databricks</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>AWS / SQL Server</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Visualisation &amp; BI</h4>
+        <div class="skill-item">
+          <div class="skill-name"><span>Tableau</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>Power BI</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>Tableau Pulse (AI Monitoring)</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>Jupyter Notebooks</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="93"></div></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Agentic AI Solutions</h4>
+        <div class="skill-item">
+          <div class="skill-name"><span>PydanticAI</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>MCP &amp; Tool-Use Pipelines</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="93"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>Production Webapp Deployment</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>Tracing &amp; Evaluation (HoneyHive)</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:2rem; font-size:0.9rem; color:var(--teal); letter-spacing:0.04em;">
+      &#8734;&nbsp; The learning never stops — continuously expanding expertise as the agentic AI landscape evolves.
+    </p>
+  </div>
+</section>
+
+<!-- ─── CONTACT ───────────────────────────────────────────────────────────── -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-layout">
+      <div>
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Let's Have a Conversation</h2>
+        <p class="section-subtitle">
+          Whether you are building out a credit risk or data &amp; AI function and want to
+          connect with a senior leader in this space — I am always happy to have a conversation.
+        </p>
+        <div class="contact-info">
+<div class="contact-item">
+            <div class="contact-item-icon">&#128140;</div>
+            <div>
+              <p>Email</p>
+              <a href="mailto:bose_anindita@yahoo.com">bose_anindita@yahoo.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">&#127968;</div>
+            <div>
+              <p>Location</p>
+              <span>Sydney, Australia &mdash; Available Globally</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">&#128336;</div>
+            <div>
+              <p>Response Time</p>
+              <span>Within 48 hours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────────────────── -->
+<footer>
+  <p>&copy; <span>Anindita Bose</span>. Credit Risk &amp; Data &amp; AI Executive. Sydney, Australia.</p>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTop" title="Back to top">&#8679;</button>
+
+<!-- ─── SCRIPTS ───────────────────────────────────────────────────────────── -->
+<script>
+  // Nav scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const navLinks  = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // Scroll-to-top
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 500);
+  });
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // Skill bars animation
+  const skillFills = document.querySelectorAll('.skill-fill');
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.width + '%';
+        skillObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  skillFills.forEach(el => skillObserver.observe(el));
+
+  // Smooth offset for fixed nav
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 80;
+        window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
