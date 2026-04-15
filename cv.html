@@ -453,18 +453,56 @@
     @media print {
       @page {
         size: A4;
-        margin: 0;
+        margin: 12mm 10mm;
       }
       body {
         background: #fff !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+        font-size: 9pt;
       }
       .print-bar { display: none !important; }
       .page-wrap {
         margin: 0;
         max-width: 100%;
         box-shadow: none;
+      }
+
+      /* Never break inside these elements */
+      .exp-item,
+      .case-item,
+      .cred-item,
+      .edu-item,
+      .metric-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      /* Always keep heading with the content below it */
+      .sec-heading,
+      .side-sec-heading {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      /* Keep role + first bullet together */
+      .exp-top,
+      .exp-company,
+      .exp-product {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      /* Keep the metrics band on same page as header */
+      .metrics-band {
+        break-before: avoid;
+        page-break-before: avoid;
+      }
+
+      /* Keep sidebar sections together where possible */
+      .skill-category {
+        break-inside: avoid;
+        page-break-inside: avoid;
       }
     }
   </style>
