@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Leadership Principles — Trust, Emotional Intelligence, and Impact</title>
-  <meta name="description" content="A guide to leadership principles integrating the Trust Equation and emotional intelligence, from a data leader's perspective.">
+  <meta name="description" content="A long-read on leadership principles integrating the Trust Equation, the EQ-i 2.0 framework, Hogan personality insights, and HBR research on presence, curiosity, psychological safety, introvert engagement and individuality.">
   <meta property="og:title" content="Leadership Principles — Trust, Emotional Intelligence, and Impact">
-  <meta property="og:description" content="Practical leadership framework combining trust, EI, and real-world application.">
+  <meta property="og:description" content="Practical leadership framework combining trust, EI, Hogan and HBR research with real-world application.">
   <meta property="og:locale" content="en_GB">
   <meta property="og:site_name" content="Anindita Bose">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,7 +63,7 @@
     .brand-dot { width:10px; height:10px; border-radius:3px; background: linear-gradient(135deg, var(--primary), var(--violet)); box-shadow: 0 0 0 4px rgba(37,99,235,.15); }
     .nav a { color: var(--muted); text-decoration:none; font-size:14px; font-weight:500; margin-left: 22px; }
     .nav a:hover { color: var(--ink); }
-    .nav-links { display:flex; }
+    .nav-links { display:flex; flex-wrap:wrap; }
     @media (max-width: 720px) { .nav-links { display:none; } }
 
     .hero {
@@ -88,18 +88,21 @@
       color: var(--ink);
     }
     h1 em { font-style: normal; background: linear-gradient(120deg, var(--primary), var(--violet)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .lede { font-size: clamp(17px, 1.6vw, 20px); color: var(--ink-2); max-width: 760px; }
+    .lede { font-size: clamp(17px, 1.6vw, 20px); color: var(--ink-2); max-width: 820px; }
     .byline { display:flex; align-items:center; gap:14px; margin-top: 28px; color: var(--muted); font-size: 14px; }
     .avatar { width:36px; height:36px; border-radius:50%; background: linear-gradient(135deg, #2563eb, #7c3aed); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size: 14px; }
     .byline strong { color: var(--ink); }
 
     .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--primary-700); text-transform: uppercase; }
     h2 { font-size: clamp(26px, 3vw, 38px); letter-spacing:-.02em; line-height:1.15; margin: 10px 0 12px; font-weight:800; }
-    .sub { color: var(--muted); max-width: 760px; font-size: 16px; }
+    h3 { letter-spacing:-.01em; }
+    .sub { color: var(--muted); max-width: 820px; font-size: 16px; }
+    .section-prose { max-width: 820px; margin-top: 20px; color: var(--ink-2); font-size: 16px; }
+    .section-prose p { margin: 14px 0; }
 
-    .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-    .grid-3 { display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-    .grid-4 { display:grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+    .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 22px; }
+    .grid-3 { display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 22px; }
+    .grid-4 { display:grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 22px; }
     @media (max-width: 920px) { .grid-2,.grid-3,.grid-4 { grid-template-columns: 1fr; } }
     .card {
       background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
@@ -109,18 +112,76 @@
     .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
     .card .icon { width: 34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center; background: var(--primary-50); color: var(--primary-700); margin-bottom: 12px; font-weight:800; }
 
-    .accordion { margin: 20px 0; }
-    .accordion-item { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 10px; }
-    .accordion-header { background: var(--surface-2); padding: 15px; cursor: pointer; font-weight: 600; }
-    .accordion-content { display: none; padding: 15px; background: var(--surface); }
+    .accordion { margin: 22px 0; }
+    .accordion-item { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 10px; background: var(--surface); }
+    .accordion-header { background: var(--surface-2); padding: 15px 18px; cursor: pointer; font-weight: 600; border-radius: var(--radius); display:flex; justify-content:space-between; align-items:center; }
+    .accordion-header:hover { background: #e9eef7; }
+    .accordion-header .chev { color: var(--muted); font-weight: 400; }
+    .accordion-content { display: none; padding: 18px; background: var(--surface); border-top: 1px solid var(--line); border-radius: 0 0 var(--radius) var(--radius); }
+    .accordion-content p { margin: 0 0 10px; color: var(--ink-2); font-size: 15px; }
+    .accordion-content ul { margin: 0 0 6px 18px; padding: 0; color: var(--ink-2); font-size: 15px; }
+    .accordion-content li { margin: 4px 0; }
+
+    .pullquote {
+      margin: 26px 0;
+      padding: 22px 26px;
+      background: linear-gradient(180deg, var(--primary-50), #ffffff);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius);
+      font-size: 18px;
+      color: var(--ink);
+      box-shadow: var(--shadow);
+    }
+    .pullquote .src { display:block; margin-top: 8px; color: var(--muted); font-size: 13px; font-weight: 500; }
+
+    .table-wrap { overflow-x:auto; margin-top: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+    table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    thead { background: var(--surface-2); }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-weight: 700; font-size: 12px; letter-spacing:.06em; text-transform: uppercase; color: var(--muted); }
+    tr:last-child td { border-bottom: none; }
+    td strong { color: var(--ink); }
+
+    .tag { display:inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+    .tag.green { background: var(--success-50); color: #047857; }
+    .tag.red { background: var(--danger-50); color: #b91c1c; }
+    .tag.amber { background: var(--accent-50); color: #b45309; }
+    .tag.blue { background: var(--primary-50); color: var(--primary-700); }
+
+    .story {
+      border-left: 4px solid var(--violet);
+      background: linear-gradient(180deg, #f6f1ff, #ffffff);
+      padding: 20px 24px;
+      border-radius: var(--radius);
+      margin-top: 22px;
+      box-shadow: var(--shadow);
+    }
+    .story h4 { margin: 0 0 8px; font-size: 16px; color: var(--violet); letter-spacing:.02em; text-transform: uppercase; }
+    .story p { margin: 8px 0; color: var(--ink-2); font-size: 15px; }
+
+    .toc { background: var(--surface); border:1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; margin-top: 28px; box-shadow: var(--shadow); }
+    .toc h4 { margin: 0 0 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .toc ol { margin: 0; padding-left: 18px; columns: 2; column-gap: 28px; }
+    .toc li { margin: 6px 0; font-size: 14px; }
+    .toc a { color: var(--ink-2); text-decoration: none; }
+    .toc a:hover { color: var(--primary-700); }
+    @media (max-width: 720px) { .toc ol { columns: 1; } }
 
     footer { padding: 40px 0 60px; color: var(--muted); font-size: 13px; }
     footer .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap: 12px; }
+
+    .sources { font-size: 13px; color: var(--muted); }
+    .sources a { color: var(--primary-700); text-decoration: none; }
+    .sources a:hover { text-decoration: underline; }
   </style>
   <script>
     function toggleAccordion(id) {
       const content = document.getElementById(id);
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      const open = content.style.display === 'block';
+      content.style.display = open ? 'none' : 'block';
+      const header = content.previousElementSibling;
+      const chev = header && header.querySelector('.chev');
+      if (chev) chev.textContent = open ? '+' : '−';
     }
   </script>
 </head>
@@ -132,10 +193,15 @@
         Leadership Principles
       </div>
       <nav class="nav-links">
-        <a href="#trust">Trust Equation</a>
-        <a href="#ei">Emotional Intelligence</a>
-        <a href="#advanced">Advanced EI</a>
-        <a href="#principles">Principles</a>
+        <a href="#trust">Trust</a>
+        <a href="#ei">EI Foundations</a>
+        <a href="#eqi">EQ-i 2.0</a>
+        <a href="#hogan">Hogan</a>
+        <a href="#presence">Presence &amp; Curiosity</a>
+        <a href="#voice">Voice &amp; Silence</a>
+        <a href="#introverts">Introverts</a>
+        <a href="#individuality">Individuality</a>
+        <a href="#principles">In Action</a>
       </nav>
     </div>
   </header>
@@ -149,14 +215,27 @@
         </div>
         <h1>Leadership Principles. <em>Trust, EI, and Real Impact.</em></h1>
         <p class="lede">
-          Integrating the Trust Equation with emotional intelligence moves for leaders who drive teams, not just manage them. From a data leader's toolkit.
+          A practitioner's framework that integrates the Trust Equation with emotional intelligence research from the EQ-i 2.0, Hogan's bright/dark/inside model, and HBR thinking on presence, curiosity, psychological safety, and the quiet skills of leading humans well — written from a data leader's perspective.
         </p>
         <div class="byline">
           <span class="avatar" aria-hidden="true">AB</span>
           <div class="byline-text">
-            <strong>Anindita Bose</strong> — Head of Data Science, Credit Risk & AI Executive
-            <small>20+ years in leadership, IRB accredited, AI-driven decisioning</small>
+            <strong>Anindita Bose</strong> — Credit Risk &amp; AI Leader
           </div>
+        </div>
+        <div class="toc">
+          <h4>What's inside</h4>
+          <ol>
+            <li><a href="#trust">The Trust Equation</a></li>
+            <li><a href="#ei">EI Foundations (Goleman)</a></li>
+            <li><a href="#eqi">The EQ-i 2.0 framework</a></li>
+            <li><a href="#hogan">Hogan: bright, dark, inside</a></li>
+            <li><a href="#presence">How leaders show up — presence &amp; curiosity</a></li>
+            <li><a href="#voice">Silence is not agreement</a></li>
+            <li><a href="#introverts">Engaging introverts and silent doers</a></li>
+            <li><a href="#individuality">Encouraging individuality and mattering</a></li>
+            <li><a href="#principles">Principles in action</a></li>
+          </ol>
         </div>
       </div>
     </section>
@@ -164,106 +243,514 @@
     <section id="trust" class="wrap">
       <div class="eyebrow">Foundation</div>
       <h2>The Trust Equation</h2>
-      <p class="sub">A framework for building trustworthiness: Credibility + Reliability + Intimacy / Self-Orientation.</p>
+      <p class="sub">Trust is not a feeling — it is engineered, observable, and measurable. The Trust Equation breaks trustworthiness into four levers a leader can deliberately move: Credibility plus Reliability plus Intimacy, divided by Self-Orientation.</p>
       <div class="grid-4">
         <div class="card">
           <div class="icon">C</div>
           <h3>Credibility</h3>
-          <p>Words we speak; can we be believed? Expertise and honesty in communication.</p>
+          <p>The words we speak. Built through expertise, evidence, candour, and the discipline of saying <em>"I don't know"</em> when it's true.</p>
         </div>
         <div class="card">
           <div class="icon">R</div>
           <h3>Reliability</h3>
-          <p>Actions and consistency; do we meet expectations? Following through on commitments.</p>
+          <p>The actions we take. Small, kept commitments compound. Reliability is the operating system of trust.</p>
         </div>
         <div class="card">
           <div class="icon">I</div>
           <h3>Intimacy</h3>
-          <p>Human connection; safety in vulnerability. Building trust through empathy.</p>
+          <p>The safety to be human. People entrust you with what matters when they believe you'll handle it with care.</p>
         </div>
         <div class="card">
           <div class="icon">S</div>
           <h3>Self-Orientation</h3>
-          <p>Focus on self vs. others; lower is better. Prioritizing team success over ego.</p>
+          <p>The denominator. Lower is better. The more focused on your own agenda, the less trust you generate.</p>
         </div>
+      </div>
+      <div class="section-prose">
+        <p>Most trust failures I have seen in 20+ years of leading data and risk teams are not failures of credibility. The numerator is usually fine — leaders are clever, deliver, and care. The damage almost always sits in the denominator: <strong>self-orientation</strong> in the room. A meeting where the senior leader needs to be the smartest, a 1:1 where the agenda is really a status update for the boss, a feedback session designed to discharge the leader's frustration. Credibility, Reliability and Intimacy can all be high and trust will still collapse because the denominator is louder than everything above the line.</p>
+      </div>
+      <div class="pullquote">
+        Trust is built in millimetres and broken in metres. The denominator is what most leaders forget to watch.
       </div>
     </section>
 
     <section id="ei" class="wrap">
-      <div class="eyebrow">Core Moves</div>
-      <h2>Emotional Intelligence at Work</h2>
-      <p class="sub">Four observable moves: Reading the room, choosing response, influencing weather, caring on purpose. Enhanced with curiosity, silence vs. agreement, engaging introverts, and individuality.</p>
-      <div class="accordion">
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion('move1')">1. Reading the Room — Including Yourself</div>
-          <div id="move1" class="accordion-content">
-            <p>Awareness of felt emotions in meetings, calls, and internally. Poor decisions often skip this step. Leaders show up with curiosity, asking questions to understand perspectives rather than assuming.</p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion('move2')">2. Choosing Your Response</div>
-          <div id="move2" class="accordion-content">
-            <p>The deliberate pause between stimulus and reaction. Leaders are not impassive but deliberate. Distinguish silence from agreement; encourage vocal dissent to avoid groupthink.</p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion('move3')">3. Influencing the Emotional Weather</div>
-          <div id="move3" class="accordion-content">
-            <p>Setting the room's climate: lifting energy, cooling tempers, creating safety for good thinking. Engage introverts by providing space for reflection, using written inputs, and valuing silent contributions.</p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion('move4')">4. Caring on Purpose</div>
-          <div id="move4" class="accordion-content">
-            <p>Consistent empathy: taking people seriously, their context, constraints, intent. Turns clever leaders into trusted ones. Encourage individuality by celebrating diverse strengths and fostering psychological safety.</p>
-          </div>
-        </div>
-      </div>
+      <div class="eyebrow">Foundations</div>
+      <h2>Emotional Intelligence — the four moves and the five components</h2>
+      <p class="sub">Daniel Goleman's <em>What Makes a Leader?</em> (HBR, 1998) named the five components that distinguish effective leaders from merely clever ones. They translate cleanly into four observable, daily moves at work.</p>
+
       <div class="grid-2">
         <div class="card">
-          <h3>Curiosity and Leader Presence</h3>
-          <p>How leaders show up matters. Curiosity drives better understanding, unlearning assumptions, and scaling innovations through boundary-spanning.</p>
+          <h3>Goleman's five components</h3>
+          <p style="margin-top:8px"><strong>Self-awareness</strong> — knowing your emotions, strengths, limits and impact.<br>
+          <strong>Self-regulation</strong> — the deliberate pause; choosing response over reaction.<br>
+          <strong>Motivation</strong> — drive that goes beyond status or money toward meaningful goals.<br>
+          <strong>Empathy</strong> — understanding others' emotions and treating their context as data.<br>
+          <strong>Social skill</strong> — friendliness with a purpose; moving people in a useful direction.</p>
         </div>
         <div class="card">
-          <h3>Psychological Safety and Empathy</h3>
-          <p>Create conditions for candor. Empathy is non-negotiable; practice it through mobilizing, engaging, and connecting with others.</p>
+          <h3>The four observable moves</h3>
+          <p style="margin-top:8px"><strong>1. Read the room — including yourself.</strong> Notice what's actually being felt before you decide what's being said.<br>
+          <strong>2. Choose your response.</strong> Insert the gap. Deliberate is not impassive.<br>
+          <strong>3. Influence the emotional weather.</strong> The senior person sets the climate, whether they intend to or not.<br>
+          <strong>4. Care on purpose.</strong> Empathy as a practice, not a personality trait.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('move1')">1. Reading the Room — Including Yourself <span class="chev">+</span></div>
+          <div id="move1" class="accordion-content">
+            <p>The most under-practised EI skill is <strong>noticing your own state before acting on it</strong>. Most poor decisions in meetings, hiring panels and escalations skip this step entirely. Before you respond, scan three layers: what am I feeling, what is the room feeling, and what am I about to do because of it?</p>
+            <p>Reading the room well requires curiosity rather than diagnosis. Ask "what's going on for them?" before "what's wrong with them?" Curiosity is the discipline that lets you act on the situation in front of you, not the script in your head.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('move2')">2. Choosing Your Response <span class="chev">+</span></div>
+          <div id="move2" class="accordion-content">
+            <p>Self-regulation is the deliberate pause between stimulus and response. Leaders who never react are not impassive — they are simply unwilling to outsource their behaviour to whoever happens to be provoking them.</p>
+            <p>A practical test: in your last difficult conversation, did you respond to the person in front of you, or to the version of them already living in your head? If the latter, the pause is the work.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('move3')">3. Influencing the Emotional Weather <span class="chev">+</span></div>
+          <div id="move3" class="accordion-content">
+            <p>The most senior person in any room sets the weather, whether they want to or not. A sharp aside, a checked phone, a tone of dismissal — these become the climate. Equally, a deliberate exhale, a thank-you, a slow question, a moment of honesty — these become the climate too.</p>
+            <p>Influencing weather is not theatre. It is the conscious choice to lift energy when it sags, to cool tempers without shaming, and to create the conditions where good thinking is even possible.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('move4')">4. Caring on Purpose <span class="chev">+</span></div>
+          <div id="move4" class="accordion-content">
+            <p>Caring on purpose means taking people's context, constraints and intent seriously — even when you disagree with their conclusion. It is what turns clever leaders into trusted ones.</p>
+            <p>The opposite of caring on purpose is not cruelty. It is convenience: caring when it costs nothing and disappearing when it does.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="advanced" class="wrap">
-      <div class="eyebrow">Advanced EI</div>
-      <h2>Deepening Emotional Intelligence</h2>
-      <p class="sub">Incorporating Hogan assessments, HBR insights, and practical techniques for inclusive leadership.</p>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Personality Insights (Hogan)</h3>
-          <p>Use assessments to measure bright side, dark side, and inside of personality for predictive performance and self-awareness.</p>
+    <section id="eqi" class="wrap">
+      <div class="eyebrow">Framework</div>
+      <h2>The EQ-i 2.0 — fifteen subscales of emotional intelligence</h2>
+      <p class="sub">The EQ-i 2.0® (based on the Bar-On model) is the most widely used measure of EI. It maps fifteen subscales across five composites — and unlike many leadership models, it treats emotional intelligence as a developable, not fixed, capability.</p>
+
+      <div class="section-prose">
+        <p>I use the EQ-i 2.0 because it is dynamic and circular. There is no start or end point: self-perception fuels self-expression, which shapes interpersonal life, which improves decision-making, which enables stress management, which deepens self-perception again. Each composite relies on and influences the others, and none is more important than the rest.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Composite</th><th>Subscales</th><th>What it asks of a leader</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Self-Perception</strong></td>
+              <td>Self-Regard · Self-Actualization · Emotional Self-Awareness</td>
+              <td>Do you know who you are, what excites you, and how your emotions are landing on others?</td>
+            </tr>
+            <tr>
+              <td><strong>Self-Expression</strong></td>
+              <td>Emotional Expression · Independence · Assertiveness</td>
+              <td>Can you say what you feel and think — constructively, without waiting for permission?</td>
+            </tr>
+            <tr>
+              <td><strong>Interpersonal</strong></td>
+              <td>Interpersonal Relationships · Empathy · Social Responsibility</td>
+              <td>Do people feel taken seriously by you, or merely processed by you?</td>
+            </tr>
+            <tr>
+              <td><strong>Decision Making</strong></td>
+              <td>Problem Solving · Reality Testing · Impulse Control</td>
+              <td>Can you make sound calls when the room — and you — are emotionally loaded?</td>
+            </tr>
+            <tr>
+              <td><strong>Stress Management</strong></td>
+              <td>Flexibility · Stress Tolerance · Optimism</td>
+              <td>Can you cope with change, hold hope, and adapt without losing your edge?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:36px">Five subscales worth deepening</h3>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('eqi-sr')">Self-Regard — appreciating yourself, "warts and all" <span class="chev">+</span></div>
+          <div id="eqi-sr" class="accordion-content">
+            <p>Self-Regard is the foundation. It is the ability to respect and accept yourself — knowing your strengths and limitations and liking yourself anyway. Leaders with healthy Self-Regard openly acknowledge mistakes and can say "I don't know" without flinching.</p>
+            <p><strong>Signs to develop more Self-Regard:</strong> persistent self-doubt despite evidence of competence, harshly critical self-assessment, difficulty accepting compliments, over-concern with others' opinions, avoidance of challenges out of fear of failure.</p>
+            <p><strong>How to build it:</strong> practise self-compassion, replace negative self-talk with realistic affirmations, set and celebrate small achievements, build self-awareness through reflection or journaling, and establish healthy boundaries.</p>
+            <div class="story">
+              <h4>Story · Angela, mid-40s executive</h4>
+              <p>Decisive, respected, juggling ministers and stakeholders. Behind closed doors, a relentless inner critic and quiet imposter feelings. Her EQ-i 2.0 profile showed high Self-Actualization but lagging Self-Regard — the perfect explanation for the perfectionism, stress and "never enough" feeling. She did not silence the critic; she got curious about it. The critic still shows up, but no longer runs the show.</p>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <h3>Engaging Introverts</h3>
-          <p>Provide reflection time, written inputs, one-on-one check-ins, and value silent contributions to harness diverse thinking.</p>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('eqi-sa')">Self-Actualization — pursuing what actually matters <span class="chev">+</span></div>
+          <div id="eqi-sa" class="accordion-content">
+            <p>Self-Actualization is the willingness to keep improving and to engage in personally meaningful work. It is one of the EQ-i subscales most strongly tied to leadership capability — particularly Innovation, Insight, Authenticity and Coaching.</p>
+            <p><strong>Signs to develop more Self-Actualization:</strong> chronic lack of fulfilment even when goals are hit, restlessness or boredom, frequent envy, neglected interests and passions, difficulty adapting to change.</p>
+            <p><strong>How to build it:</strong> set personal goals tied to values, seek mentoring, deliberately seek new experiences, embrace lifelong learning.</p>
+            <div class="story">
+              <h4>Story · Mike, senior banker</h4>
+              <p>Three decades up the ranks, then quietly cruising toward retirement. His low Self-Actualization signalled to his team that mediocrity was acceptable. One coaching question — <em>"What do you want your legacy to be?"</em> — re-ignited him. He chose to spend his last chapter lifting others, not coasting.</p>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <h3>Encouraging Individuality</h3>
-          <p>Celebrate unique strengths, foster psychological safety, and avoid defensive behaviors to promote mattering and retention.</p>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('eqi-ee')">Emotional Expression — saying the "why" behind the what <span class="chev">+</span></div>
+          <div id="eqi-ee" class="accordion-content">
+            <p>Emotional Expression is the outward communication of feelings — through words, tone, body language. Leaders who can express emotions appropriately create authentic connection and earn buy-in that pure logic cannot.</p>
+            <p><strong>Build it by:</strong> labelling your emotions out loud ("I'm frustrated that…", "I'm encouraged by…"), expanding your emotional vocabulary beyond mad/sad/glad, and checking your read on others ("It looks like you're sceptical — am I reading that right?").</p>
+            <div class="story">
+              <h4>Story · Mannat, executive director</h4>
+              <p>Brilliant analyst, clean strategy, disengaged stakeholders. Her low Emotional Expression score explained it: the data was right but the human "why" was missing. She didn't change her message — she changed how she opened it. One slide on how people felt now and how they could feel after the change. The room leaned in.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('eqi-in')">Independence — standing on your own two feet <span class="chev">+</span></div>
+          <div id="eqi-in" class="accordion-content">
+            <p>Independence is the ability to be self-directed and free from emotional dependency on others — without becoming isolated. Independent leaders consult, but they do not outsource the decision. They can stand by an unpopular call.</p>
+            <p>The shadow of high Independence is forgetting that <strong>your team is not you.</strong> What feels obvious to you may feel invisible to them.</p>
+            <div class="story">
+              <h4>Story · Melissa, fast-paced food services lead</h4>
+              <p>Naturally independent and high-performing — newly promoted, hitting targets. Engagement scores landed below average. Her team said they only heard from her when something went wrong. She didn't need affirmation, so she had assumed her team didn't either. They did. She built simple, deliberate feedback loops; engagement and trust climbed.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('eqi-fl')">Flexibility — movement as progress, not disruption <span class="chev">+</span></div>
+          <div id="eqi-fl" class="accordion-content">
+            <p>Flexibility is the ability to adapt to unfamiliar, unpredictable and fluid circumstances — to change your mind when evidence suggests you should. Far from weakness, it takes courage. <em>"I thought I was right, and I'm a big enough person to adjust."</em></p>
+            <p>Build it by treating challenges as opportunities to learn, seeking diverse perspectives, running "what if" scenarios, anchoring on long-term vision with short-term agility, and surrounding yourself with a trusted advisory board.</p>
+            <div class="story">
+              <h4>Story · Naomi, senior policy advisor</h4>
+              <p>Consistency was her strength; reform exposed it as a constraint. Her low Flexibility wasn't a habit — it was driven by a need for competence and a fear of letting people down. With practice, she learned to ask "is this a crisis, or just a shift?" before reacting. She still prefers predictability, but now sees movement as part of progress, not just disruption.</p>
+            </div>
+          </div>
         </div>
       </div>
+
+      <p class="sources" style="margin-top:18px"><em>Source: <a href="https://www.neuralnetworks.com.au/eq-i-2.0-certification" target="_blank" rel="noopener">Emotional Intelligence for Leaders, Coaches and Changemakers</a> — Rosalinda Batson &amp; Dr John Gora, Neural Networks Concepts (2026), based on the EQ-i 2.0® / Bar-On model owned by MHS Assessments.</em></p>
+    </section>
+
+    <section id="hogan" class="wrap">
+      <div class="eyebrow">Personality</div>
+      <h2>Hogan — the bright side, dark side, and inside</h2>
+      <p class="sub">Hogan assessments are widely used in executive selection and development. They map three views of personality that no leader can afford to be naive about: how you behave at your best, what derails you under pressure, and what actually drives you.</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Bright side · HPI</h3>
+          <p>The Hogan Personality Inventory describes day-to-day, "at your best" personality. It predicts strengths, work behaviour, and leadership style — the version of you others usually meet.</p>
+        </div>
+        <div class="card">
+          <h3>Dark side · HDS</h3>
+          <p>The Hogan Development Survey identifies eleven derailers — overused strengths that emerge under stress and quietly damage trust, relationships and careers.</p>
+        </div>
+        <div class="card">
+          <h3>Inside · MVPI</h3>
+          <p>The Motives, Values, Preferences Inventory describes what gets you out of bed — the goals, values, drives and interests that determine whether a culture will fit you and you will fit a culture.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:36px">The eleven Hogan derailers</h3>
+      <p class="sub">Derailers are not weaknesses; they are strengths used too much, too often, or in the wrong context. Self-aware leaders learn to spot them in themselves — especially under pressure, when blind spots get loud.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Derailer</th><th>At its best</th><th>Under pressure</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Excitable</strong></td><td>Passionate, driven</td><td>Volatile, prone to frustration</td></tr>
+            <tr><td><strong>Skeptical</strong></td><td>Perceptive, alert</td><td>Mistrustful, defensive</td></tr>
+            <tr><td><strong>Cautious</strong></td><td>Risk-aware, careful</td><td>Indecisive, fearful of mistakes</td></tr>
+            <tr><td><strong>Reserved</strong></td><td>Independent, analytical</td><td>Detached, hard to read</td></tr>
+            <tr><td><strong>Leisurely</strong></td><td>Agreeable on the surface</td><td>Privately resistant to control</td></tr>
+            <tr><td><strong>Bold</strong></td><td>Confident, self-assured</td><td>Arrogant, dismissive of feedback</td></tr>
+            <tr><td><strong>Mischievous</strong></td><td>Charming, persuasive</td><td>Reckless, manipulative</td></tr>
+            <tr><td><strong>Colorful</strong></td><td>Energetic, engaging</td><td>Attention-seeking, unfocused</td></tr>
+            <tr><td><strong>Imaginative</strong></td><td>Creative, visionary</td><td>Unrealistic, disconnected from reality</td></tr>
+            <tr><td><strong>Diligent</strong></td><td>Thorough, reliable</td><td>Perfectionistic, micromanaging</td></tr>
+            <tr><td><strong>Dutiful</strong></td><td>Loyal, considerate</td><td>Deferential, reluctant to challenge authority</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pullquote">
+        Dark-side traits are over-used strengths. Your favourite move is also your most reliable failure mode.
+        <span class="src">— synthesis of Hogan HDS research</span>
+      </div>
+      <p class="sources" style="margin-top:18px"><em>Sources: <a href="https://www.hoganassessments.com/assessment/hogan-development-survey/" target="_blank" rel="noopener">Hogan Assessments — HDS</a>; <a href="https://peterberryconsultancy.com/assessment/hogan-assessments-hpi-hds-mvpi/" target="_blank" rel="noopener">Peter Berry Consultancy — Hogan HPI/HDS/MVPI overview</a>.</em></p>
+    </section>
+
+    <section id="presence" class="wrap">
+      <div class="eyebrow">Presence</div>
+      <h2>How leaders show up — presence and curiosity</h2>
+      <p class="sub">Long before anyone hears the strategy, they read the leader. Presence is the unspoken information your team gathers from how you walk in, who you greet, what you notice, and what you ask.</p>
+
+      <div class="section-prose">
+        <p>HBR's research on executive presence converges on three components: <strong>gravitas</strong> (the substance and steadiness behind your words), <strong>communication</strong> (the craft of being understood), and <strong>appearance</strong> (the signals your physical presence sends). What changes by context is the weight of each — but the test never changes: <em>do people leave the room thinking better, or feeling smaller?</em></p>
+        <p>Curiosity is the engine. Great leaders demonstrate consistent curiosity about four things: the values and motivations of their people, the needs of customers, their own changing role, and the shifting context of the business itself. When leaders are visibly present and visibly curious, others feel seen, heard and acknowledged — the precondition for trust and the foundation of real influence.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Presence is a choice, not a personality</h3>
+          <p>Quiet leaders can have profound presence. Loud leaders can have none. Presence is the deliberate decision to show up engaged, calm, and interested in the people in front of you — whether the meeting is critical or routine.</p>
+        </div>
+        <div class="card">
+          <h3>Curiosity replaces certainty</h3>
+          <p>Leaders who substitute "I think you're missing X" with "What am I missing?" change the room. Curiosity is humility in working clothes — it produces better answers and better relationships at the same time.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('pres1')">Three questions a curious leader asks before deciding <span class="chev">+</span></div>
+          <div id="pres1" class="accordion-content">
+            <ul>
+              <li><strong>What do I not yet understand about this?</strong> — exposes assumptions before they cost you.</li>
+              <li><strong>Who has the most to lose from this decision, and have I heard them?</strong> — separates the loud voices from the relevant ones.</li>
+              <li><strong>What would change my mind?</strong> — protects you from confirmation bias dressed up as conviction.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('pres2')">Signals leaders send without realising <span class="chev">+</span></div>
+          <div id="pres2" class="accordion-content">
+            <ul>
+              <li>Who you make eye contact with first.</li>
+              <li>Whose ideas you build on (and whose you simply repeat back as your own).</li>
+              <li>What you laugh at, and at whose expense.</li>
+              <li>How long you let silence sit before filling it.</li>
+              <li>What you do with your phone in the room.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="sources" style="margin-top:14px"><em>Sources: <a href="https://hbr.org/2024/01/the-new-rules-of-executive-presence" target="_blank" rel="noopener">HBR — The New Rules of Executive Presence</a>; <a href="https://hbr.org/2023/11/leaders-make-curiosity-the-core-of-your-organizational-culture" target="_blank" rel="noopener">HBR — Leaders, Make Curiosity the Core of Your Organizational Culture</a>.</em></p>
+    </section>
+
+    <section id="voice" class="wrap">
+      <div class="eyebrow">Candour</div>
+      <h2>Silence is not agreement</h2>
+      <p class="sub">Amy Edmondson's research on psychological safety is unambiguous: people default to silence. Polite workplaces without candour silence their best thinking. The leader's job is not to encourage talk — it is to make the right kind of voice and the right kind of silence both possible.</p>
+
+      <div class="section-prose">
+        <p>Psychological safety is the shared belief that you will not be punished or humiliated for admitting a mistake, raising a concern, or disagreeing with the most senior person in the room. It is not niceness. It is the working condition under which candour becomes routine. Edmondson's voice-and-silence framework distinguishes <strong>productive contributing</strong> and <strong>productive processing</strong> from <strong>unproductive withholding</strong> and <strong>unproductive disrupting</strong>. Both speech and silence can serve a team — or quietly poison it.</p>
+        <p>A nodding room is not a convinced room. The most expensive failures I have seen in data and risk happened in meetings where everyone "agreed" and no one believed it. If you are the senior voice, your default assumption should be that you are not hearing the full picture. Make it safe — and routine — to be told.</p>
+      </div>
+
+      <h3 style="margin-top:18px">Silence vs agreement — a working table</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Behaviour</th><th>What it can look like</th><th>What it usually means</th><th>Leader move</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="tag green">Productive voice</span></td>
+              <td>Disagrees clearly with reasons; offers alternatives.</td>
+              <td>Trust is high enough to spend.</td>
+              <td>Thank visibly. Build on it. Reinforce that this is the norm.</td>
+            </tr>
+            <tr>
+              <td><span class="tag green">Productive silence</span></td>
+              <td>Pause to think; lets others speak first; reflects before responding.</td>
+              <td>Considered processing; respect for others' airtime.</td>
+              <td>Protect it. Don't fill the gap. Invite written input later.</td>
+            </tr>
+            <tr>
+              <td><span class="tag amber">Withholding</span></td>
+              <td>Polite nods, "sounds good", no questions, no objections.</td>
+              <td>Disagreement that did not feel safe to voice.</td>
+              <td>Surface it: <em>"What's the strongest argument against this?"</em></td>
+            </tr>
+            <tr>
+              <td><span class="tag red">Disrupting</span></td>
+              <td>Speaking over others, scoring points, performative dissent.</td>
+              <td>Voice without psychological safety for everyone else.</td>
+              <td>Name the pattern in private. Reset the meeting norms.</td>
+            </tr>
+            <tr>
+              <td><span class="tag red">Compliance theatre</span></td>
+              <td>Visible agreement in the room, real disagreement in the corridor.</td>
+              <td>The decision was already made; the meeting was performance.</td>
+              <td>Stop running decisions as meetings. Decide; then consult on execution.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pullquote">
+        "Don't rock the boat" and "no one ever got fired for silence" are the most expensive sentences in any organisation.
+        <span class="src">— after Amy Edmondson, HBR</span>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('voice1')">Five moves that turn silence into signal <span class="chev">+</span></div>
+          <div id="voice1" class="accordion-content">
+            <ul>
+              <li><strong>Frame the work as learning, not performance.</strong> "We are figuring this out" lowers the cost of being wrong.</li>
+              <li><strong>Speak last.</strong> Senior voices first compress everyone else's. Hold your view until you have heard others'.</li>
+              <li><strong>Ask for the dissent you most expect.</strong> "Who thinks this won't work, and why?" is more useful than "Any questions?".</li>
+              <li><strong>Reward the messenger.</strong> The first person who challenges you publicly determines whether the next twenty will.</li>
+              <li><strong>Distinguish quiet from quiet.</strong> Some silence is thinking. Some silence is fear. Learn the difference, person by person.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="sources" style="margin-top:14px"><em>Sources: <a href="https://hbr.org/2025/05/what-people-get-wrong-about-psychological-safety" target="_blank" rel="noopener">HBR — What People Get Wrong About Psychological Safety</a>; <a href="https://hbr.org/podcast/2019/01/creating-psychological-safety-in-the-workplace" target="_blank" rel="noopener">HBR — Creating Psychological Safety in the Workplace (Edmondson)</a>.</em></p>
+    </section>
+
+    <section id="introverts" class="wrap">
+      <div class="eyebrow">Inclusion</div>
+      <h2>Engaging introverts and silent doers</h2>
+      <p class="sub">Most meetings are designed for extroverts and rewarded by talkers. The leader who only hears the loudest voices is, by definition, missing some of the best thinking in the room. Introvert engagement is not a soft skill — it is an information strategy.</p>
+
+      <div class="section-prose">
+        <p>Introverts are not less interested, less committed, or less capable. They typically need <strong>time</strong> to think before speaking, <strong>format</strong> options for contributing, and <strong>safety</strong> from being put on the spot. When you give them all three, the best ideas in the room often come from the people who said the least in the first ten minutes.</p>
+      </div>
+
+      <h3 style="margin-top:18px">Designing meetings that work for both</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Dimension</th><th>Default extrovert design</th><th>Inclusive design that works for both</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Generating ideas</strong></td>
+              <td>Open brainstorm; loudest voices set the frame.</td>
+              <td>Brainwriting — silent individual writing first, then share. Round-robin to surface every voice.</td>
+            </tr>
+            <tr>
+              <td><strong>Pre-reads</strong></td>
+              <td>Decks shown live; reaction expected in real time.</td>
+              <td>Pre-reads sent 24 hours ahead. Comments invited in writing before the meeting.</td>
+            </tr>
+            <tr>
+              <td><strong>Asking for input</strong></td>
+              <td>"Any thoughts?" — answered by whoever speaks fastest.</td>
+              <td>"Take a minute, write a sentence, then we'll go round." Or pair-share, then report back.</td>
+            </tr>
+            <tr>
+              <td><strong>Calling on people</strong></td>
+              <td>Cold-calling introverts on the spot.</td>
+              <td>Forewarn: "I'd love your view in five minutes — anything you want to flag now?"</td>
+            </tr>
+            <tr>
+              <td><strong>After the meeting</strong></td>
+              <td>Decisions stick from whoever spoke last.</td>
+              <td>Open async window — channel, doc, or 1:1 — to capture late, considered input.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('intro1')">Seven concrete techniques you can use this week <span class="chev">+</span></div>
+          <div id="intro1" class="accordion-content">
+            <ul>
+              <li><strong>Brainwrite before brainstorming.</strong> Two minutes of silent writing before any open discussion.</li>
+              <li><strong>Round-robin with the option to pass.</strong> Everyone gets the floor; no one is forced to fill it.</li>
+              <li><strong>Sub-groups before plenary.</strong> Trying out an idea in a group of three is far easier than trying it out in a group of fifteen.</li>
+              <li><strong>Pre-reads, not surprises.</strong> Send the question ahead. The best thinking rarely happens at the speed of conversation.</li>
+              <li><strong>Written backchannels.</strong> A meeting doc, a Slack thread, an anonymous form — give a written exit for ideas that didn't get airtime.</li>
+              <li><strong>The "follow-up 24" rule.</strong> Decisions taken in the room are revisited 24 hours later before going final, so reflectors can weigh in.</li>
+              <li><strong>1:1 cadence.</strong> Most introverts contribute their best thinking 1:1, not in groups. A regular 30-minute slot will outperform any town hall.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('intro2')">What not to do <span class="chev">+</span></div>
+          <div id="intro2" class="accordion-content">
+            <ul>
+              <li>Don't cold-call as a "test". You'll get an answer, not the best answer — and they'll go quieter for the rest of the meeting.</li>
+              <li>Don't equate quiet with disengaged. The person who hasn't spoken often has the most considered position in the room.</li>
+              <li>Don't ask introverts to "be more visible" without redesigning the meeting. Visibility is a shared design problem, not a personal flaw.</li>
+              <li>Don't reward the first hand up. Reward the best argument, regardless of when or how it arrived.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="individuality" class="wrap">
+      <div class="eyebrow">Belonging</div>
+      <h2>Encouraging individuality — and the power of mattering</h2>
+      <p class="sub">The opposite of inclusion is not exclusion; it is sameness. Teams that produce truly novel work are teams in which people are encouraged to be themselves on purpose — and made to feel that their distinct contribution is seen.</p>
+
+      <div class="section-prose">
+        <p>HBR's research on <em>mattering at work</em> makes a sharp claim: many employees do not feel that they matter to their employers, bosses or colleagues. <strong>Mattering</strong> is the experience of feeling significant — knowing you are valued and that you add value. It is built in micro-moments of being seen and heard, and scaled by leaders who turn it into a cultural norm. Where mattering is high, engagement, retention, productivity and innovation all move with it.</p>
+        <p>Strengths-based leadership is the operational route to mattering. When development focuses on amplifying people's actual strengths — rather than endlessly remediating weaknesses — the results show up in measurable terms: engagement, retention, performance, innovation. Individuality is not a tolerance to manage; it is a competitive advantage to cultivate.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>See people, then deploy them</h3>
+          <p>Spend more time understanding the unique strengths of each person on your team than you spend designing job descriptions. Then shape the work around the talent, not the other way round.</p>
+        </div>
+        <div class="card">
+          <h3>Affirm significance, often</h3>
+          <p>Mattering is built in repeated micro-moments: naming a contribution, quoting someone in their absence, crediting an idea publicly, asking a follow-up question that proves you actually listened.</p>
+        </div>
+        <div class="card">
+          <h3>Make it cultural, not personal</h3>
+          <p>If only one leader does this, it is a personality. If the leadership team does it consistently, it becomes the operating culture — and the retention case writes itself.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('ind1')">A short audit — does individuality survive on your team? <span class="chev">+</span></div>
+          <div id="ind1" class="accordion-content">
+            <ul>
+              <li>Can each person on your team articulate their top three strengths — and do you agree with their list?</li>
+              <li>Have you redesigned anyone's role in the last six months to better match their strengths?</li>
+              <li>Whose distinct voice would your team most miss if they left tomorrow — and have you told them so?</li>
+              <li>When was the last time you defended an unconventional approach from a team member to your own boss?</li>
+              <li>Do new joiners stay themselves over time, or quietly converge to look like the rest of the team?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="sources" style="margin-top:14px"><em>Sources: <a href="https://hbr.org/2025/05/the-power-of-mattering-at-work" target="_blank" rel="noopener">HBR — The Power of Mattering at Work</a>; <a href="https://zengerfolkman.com/articles/why-strengths-based-leadership-development-outperforms-traditional-methods/" target="_blank" rel="noopener">Zenger Folkman — Strengths-Based Leadership Development</a>.</em></p>
     </section>
 
     <section id="principles" class="wrap">
       <div class="eyebrow">Application</div>
-      <h2>Leadership Principles in Action</h2>
-      <p class="sub">Combining Trust Equation and EI for impact: feedback from care, prioritization focus, people-first evaluation.</p>
+      <h2>Principles in action</h2>
+      <p class="sub">A leadership framework only matters if it survives contact with a Tuesday afternoon. These are the principles I try to live by — derived from the Trust Equation, EQ-i 2.0, Hogan, and HBR — translated into practice.</p>
+
       <div class="grid-2">
         <div class="card">
-          <h3>Feedback from Care & Improvement</h3>
-          <p>360-degree feedback anchored in care, focusing on prioritization clarity and protecting responsibilities, not just cataloging failures.</p>
+          <h3>Feedback from care, not from frustration</h3>
+          <p>360-degree feedback is most useful when it is anchored in care for the person and clarity about the work. Focus on prioritisation, on protecting their responsibilities and bandwidth — not just on cataloguing failures. Feedback delivered to discharge your frustration has a half-life of about an hour and a trust cost that lasts months.</p>
         </div>
         <div class="card">
-          <h3>People as Priority</h3>
-          <p>Roles are demanding; evaluation should improve processes and safeguard contributions, making feedback constructive.</p>
+          <h3>People as priority, process as servant</h3>
+          <p>The role is demanding for everyone. Evaluation should improve the process and safeguard the contribution. The question is rarely "is this person good enough?" — it is "is the system around them set up for them to be good?"</p>
         </div>
+        <div class="card">
+          <h3>Lower the denominator before raising the numerator</h3>
+          <p>Most trust gains come not from being more credible, more reliable or more intimate — but from visibly reducing self-orientation. Watch for who you make the meeting about.</p>
+        </div>
+        <div class="card">
+          <h3>Choose your weather, then your words</h3>
+          <p>The room reads your state before it reads your slides. The exhale, the tone, the pace of your first question — these set the conditions everything else operates in.</p>
+        </div>
+        <div class="card">
+          <h3>Treat silence as data</h3>
+          <p>If the room is quiet, it is telling you something. Find out whether it is thought, fear, or boredom — and respond to the actual signal.</p>
+        </div>
+        <div class="card">
+          <h3>Make individuality the rule, not the exception</h3>
+          <p>If you can name what is uniquely valuable about each person on your team — and they would agree with your list — you have a team. If you can't, you have a head-count.</p>
+        </div>
+      </div>
+
+      <div class="pullquote">
+        Leadership is not what you do in the moment of decision. It is the climate you have built so that, by the time the moment arrives, the right decision is already half-made.
       </div>
     </section>
   </main>
@@ -271,7 +758,7 @@
   <footer>
     <div class="wrap">
       <div>&copy; 2026 Anindita Bose</div>
-      <div>Leadership Principles</div>
+      <div>Leadership Principles · Trust · Emotional Intelligence</div>
     </div>
   </footer>
 </body>
