@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leadership Principles — Trust, Emotional Intelligence, and Impact</title>
+  <meta name="description" content="A guide to leadership principles integrating the Trust Equation and emotional intelligence, from a data leader's perspective.">
+  <meta property="og:title" content="Leadership Principles — Trust, Emotional Intelligence, and Impact">
+  <meta property="og:description" content="Practical leadership framework combining trust, EI, and real-world application.">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Anindita Bose">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --surface-2: #f1f4fa;
+      --ink: #0b1220;
+      --ink-2: #1f2937;
+      --muted: #5b6675;
+      --line: #e3e8f0;
+      --line-strong: #cbd4e1;
+      --primary: #2563eb;
+      --primary-700: #1d4ed8;
+      --primary-50: #eff5ff;
+      --accent: #f59e0b;
+      --accent-50: #fff7e6;
+      --success: #10b981;
+      --success-50: #e8faf2;
+      --danger: #ef4444;
+      --danger-50: #fdecec;
+      --violet: #7c3aed;
+      --shadow: 0 1px 2px rgba(15,23,42,.04), 0 8px 24px rgba(15,23,42,.06);
+      --shadow-lg: 0 24px 60px rgba(15,23,42,.12);
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
+    }
+    code, pre, .mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    section { padding: 88px 0; }
+    section + section { border-top: 1px solid var(--line); }
+    @media (max-width: 720px) { section { padding: 56px 0; } .wrap { padding: 0 18px; } }
+
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(140%) blur(14px);
+      background: rgba(247,248,251,.8);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; padding: 14px 28px; max-width:1180px; margin:0 auto; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:-.01em; }
+    .brand-dot { width:10px; height:10px; border-radius:3px; background: linear-gradient(135deg, var(--primary), var(--violet)); box-shadow: 0 0 0 4px rgba(37,99,235,.15); }
+    .nav a { color: var(--muted); text-decoration:none; font-size:14px; font-weight:500; margin-left: 22px; }
+    .nav a:hover { color: var(--ink); }
+    .nav-links { display:flex; }
+    @media (max-width: 720px) { .nav-links { display:none; } }
+
+    .hero {
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(37,99,235,.10), transparent 60%),
+        radial-gradient(900px 500px at 0% 10%, rgba(124,58,237,.06), transparent 60%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .pill {
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 12px; border-radius: 999px;
+      background: var(--primary-50); color: var(--primary-700);
+      font-size: 12px; font-weight: 600; letter-spacing:.02em;
+      border: 1px solid #dbe8ff;
+    }
+    .pill .dot { width:6px; height:6px; border-radius:50%; background: var(--primary); }
+    h1 {
+      font-size: clamp(34px, 5.2vw, 60px);
+      line-height: 1.05; letter-spacing: -.025em;
+      margin: 18px 0 18px; font-weight: 800;
+      color: var(--ink);
+    }
+    h1 em { font-style: normal; background: linear-gradient(120deg, var(--primary), var(--violet)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lede { font-size: clamp(17px, 1.6vw, 20px); color: var(--ink-2); max-width: 760px; }
+    .byline { display:flex; align-items:center; gap:14px; margin-top: 28px; color: var(--muted); font-size: 14px; }
+    .avatar { width:36px; height:36px; border-radius:50%; background: linear-gradient(135deg, #2563eb, #7c3aed); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size: 14px; }
+    .byline strong { color: var(--ink); }
+
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--primary-700); text-transform: uppercase; }
+    h2 { font-size: clamp(26px, 3vw, 38px); letter-spacing:-.02em; line-height:1.15; margin: 10px 0 12px; font-weight:800; }
+    .sub { color: var(--muted); max-width: 760px; font-size: 16px; }
+
+    .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .grid-3 { display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .grid-4 { display:grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+    @media (max-width: 920px) { .grid-2,.grid-3,.grid-4 { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 22px; box-shadow: var(--shadow);
+    }
+    .card h3 { margin: 0 0 6px; font-size: 17px; font-weight: 700; letter-spacing:-.01em; }
+    .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+    .card .icon { width: 34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center; background: var(--primary-50); color: var(--primary-700); margin-bottom: 12px; font-weight:800; }
+
+    .accordion { margin: 20px 0; }
+    .accordion-item { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 10px; }
+    .accordion-header { background: var(--surface-2); padding: 15px; cursor: pointer; font-weight: 600; }
+    .accordion-content { display: none; padding: 15px; background: var(--surface); }
+
+    footer { padding: 40px 0 60px; color: var(--muted); font-size: 13px; }
+    footer .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap: 12px; }
+  </style>
+  <script>
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-dot"></div>
+        Leadership Principles
+      </div>
+      <nav class="nav-links">
+        <a href="#trust">Trust Equation</a>
+        <a href="#ei">Emotional Intelligence</a>
+        <a href="#advanced">Advanced EI</a>
+        <a href="#principles">Principles</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="pill">
+          <div class="dot"></div>
+          Leadership Framework
+        </div>
+        <h1>Leadership Principles. <em>Trust, EI, and Real Impact.</em></h1>
+        <p class="lede">
+          Integrating the Trust Equation with emotional intelligence moves for leaders who drive teams, not just manage them. From a data leader's toolkit.
+        </p>
+        <div class="byline">
+          <span class="avatar" aria-hidden="true">AB</span>
+          <div class="byline-text">
+            <strong>Anindita Bose</strong> — Head of Data Science, Credit Risk & AI Executive
+            <small>20+ years in leadership, IRB accredited, AI-driven decisioning</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trust" class="wrap">
+      <div class="eyebrow">Foundation</div>
+      <h2>The Trust Equation</h2>
+      <p class="sub">A framework for building trustworthiness: Credibility + Reliability + Intimacy / Self-Orientation.</p>
+      <div class="grid-4">
+        <div class="card">
+          <div class="icon">C</div>
+          <h3>Credibility</h3>
+          <p>Words we speak; can we be believed? Expertise and honesty in communication.</p>
+        </div>
+        <div class="card">
+          <div class="icon">R</div>
+          <h3>Reliability</h3>
+          <p>Actions and consistency; do we meet expectations? Following through on commitments.</p>
+        </div>
+        <div class="card">
+          <div class="icon">I</div>
+          <h3>Intimacy</h3>
+          <p>Human connection; safety in vulnerability. Building trust through empathy.</p>
+        </div>
+        <div class="card">
+          <div class="icon">S</div>
+          <h3>Self-Orientation</h3>
+          <p>Focus on self vs. others; lower is better. Prioritizing team success over ego.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ei" class="wrap">
+      <div class="eyebrow">Core Moves</div>
+      <h2>Emotional Intelligence at Work</h2>
+      <p class="sub">Four observable moves: Reading the room, choosing response, influencing weather, caring on purpose. Enhanced with curiosity, silence vs. agreement, engaging introverts, and individuality.</p>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('move1')">1. Reading the Room — Including Yourself</div>
+          <div id="move1" class="accordion-content">
+            <p>Awareness of felt emotions in meetings, calls, and internally. Poor decisions often skip this step. Leaders show up with curiosity, asking questions to understand perspectives rather than assuming.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('move2')">2. Choosing Your Response</div>
+          <div id="move2" class="accordion-content">
+            <p>The deliberate pause between stimulus and reaction. Leaders are not impassive but deliberate. Distinguish silence from agreement; encourage vocal dissent to avoid groupthink.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('move3')">3. Influencing the Emotional Weather</div>
+          <div id="move3" class="accordion-content">
+            <p>Setting the room's climate: lifting energy, cooling tempers, creating safety for good thinking. Engage introverts by providing space for reflection, using written inputs, and valuing silent contributions.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion('move4')">4. Caring on Purpose</div>
+          <div id="move4" class="accordion-content">
+            <p>Consistent empathy: taking people seriously, their context, constraints, intent. Turns clever leaders into trusted ones. Encourage individuality by celebrating diverse strengths and fostering psychological safety.</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Curiosity and Leader Presence</h3>
+          <p>How leaders show up matters. Curiosity drives better understanding, unlearning assumptions, and scaling innovations through boundary-spanning.</p>
+        </div>
+        <div class="card">
+          <h3>Psychological Safety and Empathy</h3>
+          <p>Create conditions for candor. Empathy is non-negotiable; practice it through mobilizing, engaging, and connecting with others.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="advanced" class="wrap">
+      <div class="eyebrow">Advanced EI</div>
+      <h2>Deepening Emotional Intelligence</h2>
+      <p class="sub">Incorporating Hogan assessments, HBR insights, and practical techniques for inclusive leadership.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Personality Insights (Hogan)</h3>
+          <p>Use assessments to measure bright side, dark side, and inside of personality for predictive performance and self-awareness.</p>
+        </div>
+        <div class="card">
+          <h3>Engaging Introverts</h3>
+          <p>Provide reflection time, written inputs, one-on-one check-ins, and value silent contributions to harness diverse thinking.</p>
+        </div>
+        <div class="card">
+          <h3>Encouraging Individuality</h3>
+          <p>Celebrate unique strengths, foster psychological safety, and avoid defensive behaviors to promote mattering and retention.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="principles" class="wrap">
+      <div class="eyebrow">Application</div>
+      <h2>Leadership Principles in Action</h2>
+      <p class="sub">Combining Trust Equation and EI for impact: feedback from care, prioritization focus, people-first evaluation.</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Feedback from Care & Improvement</h3>
+          <p>360-degree feedback anchored in care, focusing on prioritization clarity and protecting responsibilities, not just cataloging failures.</p>
+        </div>
+        <div class="card">
+          <h3>People as Priority</h3>
+          <p>Roles are demanding; evaluation should improve processes and safeguard contributions, making feedback constructive.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>&copy; 2026 Anindita Bose</div>
+      <div>Leadership Principles</div>
+    </div>
+  </footer>
+</body>
+</html>
